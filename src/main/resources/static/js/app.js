@@ -30,8 +30,18 @@ app.controller('RegController', ['$scope', '$http', '$location', '$window', func
 
 
             $http.post(url, $scope.cust, config).then(function () {
-                alert("Customer successfully registered!!");
-                $window.location.href = "http://localhost:8090/shop";
+
+                if ($scope.cust.password === $scope.cust.conf) {
+                    alert("Customer successfully registered!!");
+                    $window.location.href = "http://localhost:8090/shop";
+                } else {
+                    alert("The two passwords do not match!");
+                    $scope.cust.password = "";
+                    $scope.cust.conf = "";
+                }
+
+
+
 
             }, function () {
                 alert("Failed ");
@@ -239,13 +249,13 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
 
             $http.get(url, config).then(function (response) {
                 $scope.totalPrice = response.data;
-                
+
             }, function (response) {
                 $scope.getResultMessage = "Fail!";
                 alert(getResultMessage);
             });
         };
-        
+
         $scope.getcartfunction = function () {
             var url = "http://localhost:8090/shop/products/";
 
@@ -280,7 +290,7 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
                 $scope.getResultMessage = "Failed!";
                 alert(getResultMessage);
             });
-            
+
             var url1 = "http://localhost:8090/shop/product/update1/";
             $http.post(url1, quantity, config).then(function (response) {
 
@@ -306,6 +316,7 @@ app.controller('OrderCtrl', ['$scope', '$http', '$location', '$window', function
 
             $http.post(url, $scope.d, config).then(function () {
                 alert("Delivery address successfully added!");
+                $window.location.href = "http://localhost:8090/thank";
 
             }, function () {
                 alert("Failed");

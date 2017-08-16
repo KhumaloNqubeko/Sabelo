@@ -65,4 +65,9 @@ public class MainController {
     private String getCheckout(){
         return "Checkout";
     }
+    
+    @GetMapping("/thank")
+    private String getLastPage(){
+        return "thank";
+    }
 }
