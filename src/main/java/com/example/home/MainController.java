@@ -1,0 +1,68 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.example.home;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+/**
+ *
+ * @author User
+ */
+@Controller
+public class MainController {
+    
+    @GetMapping("/")
+    private String indexHome(){
+        return "index";
+    }
+    
+    @GetMapping("/register")
+    private String registerCustomer(){
+        return "register";
+    }
+    
+    @GetMapping("/login")
+    private String loginCustomer(){
+        return "login";
+    }
+    
+    @GetMapping("/shop")
+    private String myShop(){
+        return "shop";
+    }
+    
+    @GetMapping("/admin")
+    private String admin(){
+        return "admin";
+    }
+    
+    
+    @GetMapping("/stock")
+    private String addStock(){
+        return "addStock";
+    }
+    
+    @GetMapping("/allProducts")
+    private String getAllProducts(){
+        return "allProducts";
+    }
+    
+    @GetMapping("/viewMoreLogin")
+    private String getViewMoreLogin(){
+        return "viewMoreLogin";
+    }
+    
+    @GetMapping("/Cart")
+    private String getCart(){
+        return "Cart";
+    }
+    
+    @GetMapping("/Checkout")
+    private String getCheckout(){
+        return "Checkout";
+    }
+}

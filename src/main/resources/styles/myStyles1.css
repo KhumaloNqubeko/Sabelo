@@ -1,0 +1,2503 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 14, 2017, 9:50:49 AM
+    Author     : User
+*/
+/***** Aqua styles *******/
+body {
+  font-family: arial;
+  font-size: 12px;
+  color: #666666;
+}
+/*
+* {
+  margin: 0;
+  padding: 0;  
+ }*/
+ 
+ /*************************/
+ /***** Golden Ticket *****/
+ /*************************/
+ 
+#goldenticket {
+	width: 100%;
+	height: 1100px;
+	background: url('../images/blackopacity.png') repeat;
+	position: absolute;
+	z-index: 2000;
+	top: 0;
+	left: 0;
+}
+
+#goldenticket div {
+	margin: 50px auto 0 auto;
+	width: 507px;
+	height: 506px;
+	background: #FFF;
+}
+
+a#closegoldticket {
+	float: right;
+	cursor: pointer;
+}
+ 
+ /*************************/
+
+.top20 {
+	margin-top: 20px;
+}
+ 
+#container_aqua, #header_aqua, #navigation_aqua {
+	font-size: 12px;
+}
+
+#outer_container_aqua, #outer_container {
+	/*background: url('../images/background_main.jpg') repeat-x top;*/
+	
+}
+ 
+.christmas_logo {
+  margin-top:-10px
+} 
+
+
+#container_aqua {
+  width:1020px;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.inner_padding {
+  padding: 0 20px;
+}
+
+
+
+/* begin header */
+
+#header_aqua {
+  height: 51px;
+  padding-top: 29px;
+  font-size: 12px;
+}
+
+  .header_center_aqua {
+    width:300px;
+    margin-left: 40px;
+    /*padding-top: 13px;*/
+	padding-top: 14px;
+  }
+  
+  .header_right_aqua {
+    width:380px;
+    padding-top: 13px;
+    height:40px;
+    position:relative;
+    z-index:5; 
+  } 
+
+    #myTools_aqua {
+      width:135px;
+      height:26px;
+      float:right;
+      position:relative;
+      margin-top:-6px;
+      background-position: -225px -197px;
+      cursor:pointer;
+      right:10px;
+      
+    }
+    
+      #myTools_aqua:hover {
+        background-position: -225px -223px; 
+      }
+      
+          #myTools_aqua .myTools_dropdown_aqua {
+            position:absolute;
+            top:26px; 
+            z-index:2;
+            cursor: default;
+            display:none;
+				right: 2px;
+          }
+          
+            #myTools_aqua .myTools_container {
+              float:left;
+              position:relative;
+              border-right:1px solid #f4f4f4;
+              border-left:1px solid #f4f4f4; 
+
+              width:144px;
+              background: #fff;
+              top:-2px;
+              
+            }
+            
+            #myTools_aqua .myTools_content {
+              background: #f6f6f6;
+              margin: 0 2px 0 2px;
+              float:left;
+            }
+            
+            #myTools_aqua .myTools_content ul {
+              width:129px;
+              margin:0;
+              padding:0 5px 0 5px;
+            }
+            
+            #myTools_aqua .myTools_content ul li {
+              width:100%;
+              padding:0;
+              margin:0;
+              height:45px;
+              border-bottom: 1px solid #e4e4e4;
+              line-height:45px
+            }
+            
+            #myTools_aqua .myTools_content ul li a {
+              color:#383667;
+            }
+            
+            #myTools_aqua .myTools_content ul li a:hover {
+              color: #cf437a 
+            }
+            
+              #myTools_aqua .myTools_content ul li:hover { 
+               background:#ebebeb;
+               cursor: pointer;
+               color: #cf437a 
+              }
+            
+              
+              
+              #myTools_aqua .myTools_content ul li img {
+                padding-top:2px;
+                float:left;
+                margin-right:5px;
+              }
+    
+  
+          #myTools_aqua .heading_aqua {
+            width:135px;
+            height:5px;
+            background-position: -225px -249px;
+            position:absolute;
+            z-index:2; 
+            left:0;
+            top:-5px;
+          }
+          
+          #myTools_aqua .footer_aqua {
+            width:135px;
+            height:10px;
+            background-position: 0 -53px;
+            position:absolute;
+            z-index:2; 
+            left:-1px;
+            bottom:-9px;
+          }             
+  
+    #header_aqua ul {
+      list-style: none;
+      margin: 0 0 0 39px;
+      padding: 0;
+      float:left;
+    }
+    
+     #header_aqua ul li {
+        float:left;
+        padding-right: 8px;
+        vertical-align: top;
+        margin-top: -2px;
+      }
+
+
+  .phone_number_aqua {
+    width: 98px;
+    height: 11px;
+    background-position: 0 0;
+    float:left;
+	margin-top: 2px;
+    }
+    
+/* begin navigation */
+
+#navigation_aqua {
+  height: 30px;
+  margin: 15px 0 1px 0;
+  position: relative;
+  z-index: 5;
+  float:left;
+}
+
+  #navigation_aqua ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float:left;
+  }
+
+  #navigation_aqua ul li {
+    float:left;
+    border-right:2px solid #fff;
+    position: relative;
+    /*
+    font-family: 'CachetStdBold',Arial;
+    font-size:14px;
+    text-transform: uppercase;
+    float:left;
+    padding: 10px;
+    background: #f6f6f6;
+    border-right: 2px solid #fff;
+    */
+  }
+  
+
+  
+  #navigation_aqua span {
+    display:none;
+  }
+  
+  #navigation_aqua li, #navigation_aqua a {
+    height:30px;
+    display:block;
+  }  
+  
+    #nav_home_aqua {
+      width:55px;
+      background-position: 0 -11px;
+    }
+    
+      #nav_home_aqua:hover, #nav_home_active_aqua  {
+        width:55px;
+        background-position: 0 -41px; 
+      }  
+
+
+    #nav_shopping_aqua {
+      width:82px;
+      background-position: -55px -11px;
+    }
+    
+      #nav_shopping_aqua:hover, #nav_shopping_active_aqua {
+        width:82px;
+        background-position: -55px -41px; 
+      }    
+      
+    #nav_recipes_aqua {
+      width:69px;
+      background-position: -137px -11px;
+    }
+    
+      #nav_recipes_aqua:hover, #nav_recipes_active_aqua  {
+        width:69px;
+        background-position: -137px -41px;
+      } 
+      
+    #nav_fresh_living_aqua {
+      width:102px;
+      background-position: -206px -11px;
+    }  
+    
+      #nav_fresh_living_aqua:hover, #nav_fresh_living_active_aqua {
+        width:102px;
+        background-position: -206px -41px;
+      }
+      
+    #nav_services_aqua {
+      width:77px;
+      background-position: -308px -11px;
+    }      
+
+      #nav_services_aqua:hover, #nav_services_active_aqua {
+        width:77px;
+        background-position: -308px -41px;
+      }            
+
+    #nav_about_aqua {
+      width:82px;
+      background-position: -385px -11px;
+    }      
+
+      #nav_about_aqua:hover, #nav_about_active_aqua {
+        width:82px;
+        background-position: -385px -41px;
+      }  
+      
+    #nav_careers_aqua {
+      width:74px;
+      background-position: -467px -11px;
+    }      
+
+      #nav_careers_aqua:hover, #nav_careers_active_aqua {
+        width:74px;
+        background-position: -467px -41px;
+      } 
+
+    #nav_smartshopper_aqua {
+      width:122px;
+      background: url('../images/aqua/smartshopper.gif') no-repeat;
+    }      
+
+      #nav_smartshopper_aqua:hover, #nav_smartshopper_active_aqua {
+        width:122px;
+        background: url('../images/aqua/smartshopper_hover.gif') no-repeat;
+      }
+	 
+	#nav_christmas_aqua {
+	  width: 90px;
+	  background: url('../images/aqua/christmas.png') no-repeat;
+	} 
+	
+      #nav_christmas_aqua:hover, #nav_christmas_active_aqua {
+        width: 90px;
+        background: url('../images/aqua/christmas_hover.png') no-repeat;
+      } 
+		
+/********** Back to school starts **************/
+
+	#nav_backtoschool_aqua {
+		  width: 125px;
+		  background: url('../images/aqua/backtoschool.png') no-repeat;
+		} 
+		
+			#nav_backtoschool_aqua:hover, #nav_backtoschool_active_aqua {
+			  width: 125px;
+			  background: url('../images/aqua/backtoschool_hover.png') no-repeat;
+			} 
+      
+#nav_cycle_tour_aqua {
+	  width: 129px;
+	  background: url('../images/aqua/cycle-tour.gif') no-repeat 0 1px;
+	} 
+	
+      #nav_cycle_tour_aqua:hover, #nav_cycle_tour_active_aqua {
+
+      }
+	  
+	  
+	  /****** dropdown menu *********/
+  
+.drop_menu_aqua {
+  background: #003767;
+  float:left;
+  position:relative;
+}
+
+  .rounded_corners_aqua {
+    width:6px;
+    height:6px;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+    .left_bottom_corner_aqua {
+      left:0;
+      bottom: -6px;
+      background-position: 0 -6px;
+    }
+    
+    .left_top_corner_aqua {
+      left:0;
+      top: 0;
+      background-position: 0 0;
+    }     
+    
+    .right_top_corner_aqua {
+      right:0;
+      top: 0;
+      background-position: -6px 0;
+    }          
+
+    .right_bottom_corner_aqua {
+      right:0;
+      bottom: -6px;
+      background-position: -6px -6px;
+    } 
+    
+    .bottom_corner_fix_aqua {
+      width:200px;
+      left:6px;
+      bottom:-6px;
+      height:6px;
+      position:absolute;
+      background:#003767;
+    }
+    
+      .twoColMenu_aqua {
+        width: 322px;
+      }
+      
+      .twoColMenu_Recipe_aqua {
+        width: 390px;
+      }      
+
+.drop_width_fix_aqua {
+  position:absolute;
+  top:30px;
+  width:500px;
+  display:none;
+}      
+    
+#navigation_aqua ul.nav_dropdown_aqua {
+  padding:15px 10px 5px 10px;
+
+}  
+
+#navigation_aqua ul.nav_dropdown_aqua .nav_recipes_aqua {
+  border-right:1px solid #0d416f;
+  width:152px
+}
+
+ul.nav_recipes_aqua {
+  background: url(../images/menu_border.gif) repeat-y top right;
+}  
+
+
+.recipe_content_aqua ul.nav_recipes_aqua {
+  background:none;
+}
+
+
+#nav_recipes_aqua .recipe_featured_aqua h2 {
+  color: #fff;
+  font-weight: normal;
+  font-size:14px;
+  font-family: 'CachetStdBold';  
+  padding-bottom: 7px;
+}
+
+.recipe_featured_aqua {
+	float:left;
+	width:214px;
+	height:auto;
+	border-left:1px solid #01325d;
+	padding-top:14px;
+	padding-left:20px;	
+	padding-bottom: 15px
+}
+
+.recipe_featured_aqua  #article_listing_image {
+  width:auto;
+}
+
+.recipe_featured_aqua h1 a {
+  font-weight:normal
+}
+
+  .recipe_heading_aqua {
+    background-position: -423px -71px; 
+    width:106px;
+    height: 13px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+
+#nav_recipes_aqua .recipe_featured_aqua img {
+  float:left;
+  padding-right:7px;
+}
+
+#nav_recipes_aqua .recipe_featured_aqua .recipe_content_aqua {
+  color: #fff;
+  width: 105px;
+  float:left;
+}
+
+#navigation_aqua .recipe_content_aqua ul.nav_recipes_aqua {
+  padding:5px 0 0 0;
+}
+
+#navigation_aqua ul.nav_dropdown_aqua li {
+  border-right: none;
+  float:none;
+  background: url(../images/aqua/image_pack_gif_transparents.gif) no-repeat;
+  height: 15px;
+  margin-bottom: 10px;
+  background-position: 0 -12px ;
+  text-indent: 8px;
+  width: 147px
+}
+
+  #navigation_aqua ul.nav_dropdown_aqua li:hover {
+    background-position: 0 -27px ;
+  }
+
+#navigation_aqua ul.nav_dropdown_aqua li a {
+  height:15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#navigation_aqua ul.nav_dropdown_aqua li a:hover {
+  color: #7fb6e6;
+}  
+  
+  .search_container_aqua {
+    width:140px;
+    float:right;
+    padding-top:4px;
+    position:relative;
+    margin-top:15px;
+  } 
+  
+  .search_date {
+	  font-family: arial;
+	  color: #c60651;
+	  font-size: 11px;
+	  margin-bottom: 10px;
+  }
+  
+  
+  #container_aqua img {
+    border:0;
+  }
+  
+  .search_container_aqua span {
+    visibility: hidden;
+  }
+  
+  input.search_input_aqua {
+    line-height: 18px;
+    height:18px;
+    text-indent: 8px;
+    font-size:11px;
+    color: #7d7d7d;
+    width: 113px;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    border-left: none;
+    border-right: none;
+    position:absolute;
+    width: 113px;
+    top: 0;
+    left:0;
+    padding:0;
+  }
+  
+  .search_wrapper_aqua {
+    width: 113px;
+    position:relative;
+    float:left;
+  }
+  
+    .search_corners_aqua {
+      width:4px;
+      height:20px;
+      position: absolute;
+      z-index:2
+    }
+    
+      .search_corners_left_aqua {
+        left:0;
+        top:0;
+        background-position: 0 -71px;
+      }
+      
+      .search_corners_right_aqua {
+        right:0;
+        top:0;
+        background-position: -4px -71px;
+      } 
+      
+   .search_btn_aqua {
+     width: 20px;
+
+     height: 20px;
+     background-position: -8px -71px;
+     float:right;
+     margin-right: 5px;
+     overflow:hidden;
+   }
+   
+    .search_btn_aqua:hover {
+      background-position: -27px -71px;
+    }  
+    
+    
+/* Begin Slider */
+
+#special_slider_container_aqua {
+  height:187px;
+  margin-top:15px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0 7px;
+}
+
+#special_slider_content_aqua {
+  width:935px;
+  height: 137px;
+  position: absolute;
+  left: 12px;
+
+  top: 33px;
+  overflow:hidden;
+}
+
+  #special_slider_content_aqua  ul {
+    position: relative;
+    list-style: none;
+    width:100%;
+    }
+
+  #special_slider_content_aqua  ul li {
+      float:left;
+      margin-right: 10px;
+      width:226px;
+      height: 137px;
+      position: relative;
+    }
+  
+  #special_slider_content_aqua  ul li .special_slider_desc_aqua {
+    height: 92px;
+    padding-left:3px;
+    width: 116px;
+    float:left;
+  }
+  
+  #special_slider_content_aqua  ul li .special_slider_desc_footer_aqua {
+    height: 42px;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    position:absolute;
+  }  
+  
+   #special_slider_content_aqua  ul li .special_slider_desc_footer_aqua .special_add_to_list_aqua {
+      height:25px;
+      width:225px;
+      position:relative;
+
+      margin-top:6px;
+      background-position:-198px -72px
+    }
+    
+    
+  #special_slider_content_aqua ul li p.special_slider_title_aqua {
+      font-size: 11px;
+      color: #003767;
+      margin-bottom: 9px;
+      font-weight: bold;
+      line-height:100%;
+    }  
+    
+   #special_slider_content_aqua ul li p.special_slider_price_aqua {
+     font-size: 15px;
+     font-weight: bold;
+     color: #C60651;
+   }  
+
+   #special_slider_content_aqua ul li p.special_slider_per_aqua {
+     font-size: 8px;
+     color: #656565;
+     text-transform: uppercase;
+   } 
+   
+   #special_slider_content_aqua ul li p.special_slider_valid_aqua  {
+     font-size: 9px;
+     color: #656565;
+     text-transform: uppercase;
+     padding-left:3px;
+     width: 116px;
+   }  
+   
+   
+   #special_slider_content_aqua ul li .special_add_to_shopping_list_aqua {
+     position:absolute;
+     width:116px;
+     height:18px;
+     left:3px;
+     bottom: 4px;
+     clear:both
+   }  
+   
+   #special_slider_content_aqua ul li .special_slider_desc_image_aqua {
+     float:right;
+   }
+    
+    
+   .special_slider_desc_seperator_aqua {
+      background-position:-557px 0;
+      height:141px;
+      position:absolute;
+      right:-10px;
+      width:11px;
+   }
+   
+
+  .special_slider_corners_aqua {
+    position:absolute;
+    width:7px;
+    height:187px;
+  }
+  
+    .special_slider_corners_left_aqua {
+      left:0;
+      top:0;
+      background-position: -542px 0;
+    } 
+    
+    .special_slider_corners_right_aqua {
+      right:0;
+      top:0;
+      background-position: -548px 0;
+    } 
+    
+    
+    .special_slider_control_aqua {
+      width:28px;
+      height: 25px;
+      cursor: pointer;
+      margin-right:1px;
+      float:left;
+    } 
+    
+      .slider_button_previous_aqua {
+        background-position: 0 -93px;
+      }
+      
+      .slider_button_previous_aqua_inactive {
+        background-position: 0 -143px;
+      }      
+      
+        .slider_button_previous_aqua:hover {
+          background-position: 0 -118px;
+        }    
+      
+      .slider_button_next_aqua {
+        background-position: -28px -93px;
+      }  
+      
+        .slider_button_next_aqua:hover {
+          background-position: -28px -118px;
+        }                   
+
+    .slider_button_viewall_aqua {
+      width: 142px;
+      height: 25px;
+      float:left;
+      margin-left: 11px;
+      cursor: pointer;
+      background-position: -56px -71px;
+      position: relative;
+    } 
+    
+      .slider_button_viewall_aqua:hover {
+        background-position: -56px -96px;
+      }    
+      
+      
+/* Begin Columns */
+
+#onecol_aqua {
+  float:left;
+  width: 960px;
+  clear:both;
+}
+
+#leftcol_aqua, #rightcol_aqua {
+  width:225px; 
+  float:left;
+
+
+}
+
+#centercol_aqua {
+  width:470px;
+  margin: 0 20px;
+  float:left;
+  height:270px; 
+}
+
+/* Begin Main Slider */
+
+  ul#slider1 li img {
+    width:470px; 
+    zoom:1;
+  }
+
+/*#slider_aqua {
+  width:100%;
+  float:left;
+  margin-bottom: 25px;
+}
+
+  #slider_image_holder_aqua {
+    width:100%;
+    height:248px;
+    overflow:hidden;
+  }
+  
+  
+  #slider_aqua ul {
+    text-align: center;
+    background:#f0eeef;
+    height:21px;
+    list-style: none;
+    width: 100%;
+  }
+  
+  #slider_aqua ul li {
+    display: inline;
+    padding: 0 5px;
+    border-right: 1px solid #d9d9d9;
+    line-height: 21px;
+    cursor: pointer;
+    position:relative;
+
+
+  }
+  
+  #slider_aqua ul li.active {
+    font-weight: bold;
+  }  
+  
+  #slider_aqua ul li.last {
+    border-right: none;
+  }
+  
+  #slider_aqua ul li:hover, #slider_aqua ul li.active {
+    color:#c60651;
+    font-weight:normal;
+  }
+  
+  .active_arrow_aqua {
+    background: url(../images/aqua/slider/controls/active_arrow.png) top center no-repeat;
+    width:100%;
+    height: 7px;
+    position: absolute;
+    top:-10px;
+    left:0;
+
+  }*/
+
+
+/* Begin Modules */
+
+#heading_login_to_pnp_aqua {
+  width:134px;
+  height: 12px;
+  background-position: -181px -121px; 
+  margin-left:10px;
+  position:relative;
+  top:6px;
+}
+
+#heading_news_pnp_aqua  {
+  width:116px;
+  height: 12px;
+  background-position: -315px -121px; 
+  margin-left:10px;
+  position:relative;
+  top:6px;
+}
+
+.module_content_aqua h1 {
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:normal;
+	padding-bottom:10px;
+}
+
+.module_content_aqua h1 a {
+	color:#003767;
+}
+
+.module_content_aqua h1 a:hover {
+  color:#C60651;
+}
+
+.module_content_aqua h1.secondary a {
+	font-size:12px;
+  color:#003767;	
+}
+
+.module_content_aqua h1.secondary a:hover {
+  color:#C60651;
+}
+
+.module_wrapper_aqua {
+  position:relative; 
+  height:270px;
+  margin-bottom: 25px;
+}
+
+.module_header_aqua {
+  height:23px;
+  width:100%;
+  line-height: 23px;
+  background-position: 0 -187px;
+  color: #fff;
+  text-indent:13px;
+  position:absolute;
+  top:0;
+  left:0; 
+  z-index:2
+  
+}
+
+.module_content_aqua {
+  position:relative; 
+  padding-top:22px;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;   
+}
+
+.module_content_aqua ul {
+  list-style:none;
+  margin:0;
+  height:242px;
+  
+}
+  
+  .module_content_aqua ul li {
+    padding: 10px;
+    border-top: 1px dotted #d5d5d5; 
+    position: relative;
+  }
+  
+  .content_divider {
+    padding: 5px;
+    border-top: 1px dotted #d5d5d5; 
+    position: relative;
+  }
+
+  .module_content_aqua ul li.login_module_aqua {
+     background: #f6f6f6;    
+
+  }
+  
+  .module_content_aqua ul li.module_list_footer_aqua {
+    margin-top: -1px;
+    border-bottom: none;
+    background: #f2f2f2;
+    padding-top: 5px;
+    padding-bottom: 0;
+    position:relative;
+
+  }
+  
+.module_content_aqua h2 {
+  color: #003767;
+  padding-bottom:10px;
+  font-size:14px;
+}
+
+.module_footer_container_aqua {
+  position:absolute;
+  left:0;
+  bottom:0;
+  background:#f2f2f2 
+}
+
+
+.module_footer_aqua {
+  width:225px;
+  margin-left:0;
+  height:8px;
+  background-position: -76px -139px;
+  margin-top:0;
+  overflow:hidden
+}
+
+.module_footer_borders_aqua {
+  float:left;
+  width:223px;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;  
+}
+
+
+  .module_btn_signup_aqua {
+    width:86px;
+    height:25px;
+    background-position: -76px -147px;
+    cursor:pointer;
+    position:relative;
+    margin: 5px auto 0 auto;
+  }
+    .module_btn_signup_aqua:hover {
+      background-position: -76px -172px;
+    }
+  
+    .module_btn_signup_aqua a span {
+      visibility: hidden;
+    }
+    
+  .module_btn_more_aqua {
+    width: 100px;
+    height: 25px;
+    background-position: -162px -147px; 
+    cursor:pointer;
+    position:relative;
+    margin: 5px auto 0 auto;    
+  }
+  
+    .module_btn_more_aqua:hover {
+      background-position: -162px -172px;
+    } 
+    
+    .module_btn_more_aqua a {
+      position: absolute;
+      width:100%;
+      height:100%;
+    }
+    
+    .module_btn_more_aqua a span {
+      visibility: hidden;
+    }     
+
+  form#login {
+    position:relative;
+  }
+  
+  form#login input#submit_aqua {
+    width:48px;
+    height:23px;
+    background-position: -28px -143px;
+    font-family: 'CachetStdBold', arial;
+    color: #fff;
+    font-size:11px;
+    line-height: 23px;
+    text-indent: 0;
+    cursor: pointer;
+    position:absolute;
+    margin-top: -29px;
+    margin-left:200px;
+    margin-right:0;
+    right: 0;
+    margin-bottom: 0;
+    padding: 0;    
+  }
+  
+
+
+  
+    form#login input#submit_aqua:hover  {
+      background-position: -28px -167px;
+    }
+
+  form#login input {
+    display:block;
+    color: #949494;
+    margin-bottom:5px;
+    width: 145px;
+    font-size:12px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    text-indent: 7px;
+    background-position: -198px -97px;
+    border: 0;
+
+  }
+  
+  form#login p {
+    color: #003767;
+    margin-top:5px;
+
+  }
+
+
+/* Begin Banners */
+
+.footer_banner_container_aqua {
+  width:225px;
+  height:80px;
+  /*margin-bottom: 20px;*/
+  background-position: 0 -197px;
+  /*float:left;*/
+  /*margin-right: 20px;*/
+  cursor: pointer;  
+  
+}
+
+.homepage_bottom_banner {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+  .footer_banner_container_aqua:hover {
+    background-position: 0 -277px;
+  }
+  
+  .footer_banner_content_aqua {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .footer_banner_container_aqua p {
+    margin-left:56px;
+    position:relative;
+    width:148px;
+  }
+  
+  .footer_banner_image_aqua {
+    width:45px;
+    margin-right:11px;
+    height:55px;
+    float:left;
+    margin-top: -6px;
+  }
+      /* begin banner images */
+      .banner_image_foundation {
+        background-position:-147px 0;
+      }
+      
+      .banner_image_healthy {
+        background-position:-192px 0;
+      }  
+      
+      .banner_image_health_corner {
+        background-position:-237px 0;
+      }  
+      
+      .banner_image_substain {
+        background-position: 0 -72px;
+      }
+      
+      .banner_image_school {
+        background-position: -45px -72px;
+      }   
+
+      .banner_image_investor {
+        background-position: -90px -72px;
+      } 
+      .banner_image_lotto {
+        background-position: -135px -72px;
+      }                  
+                
+  
+  
+  .social_media_footer_aqua {
+    width: 35px;
+    height: 36px;
+    cursor: pointer;
+    float:left;
+    margin-right: 15px;
+    position:relative;
+
+  }
+  
+  .social_media_footer_aqua a, .social_media_zoopy_aqua a {
+    position:absolute;
+    width:100%;
+    height:100%;
+  }
+  
+  .social_media_footer_aqua a span, .social_media_zoopy_aqua a span  {
+    visibility: hidden;
+  }
+  
+    .social_media_twitter_aqua {
+      background-position: 0 0;
+    }     
+    
+      .social_media_twitter_aqua:hover {
+        background-position: 0 -36px;
+      } 
+      
+    .social_media_facebook_aqua {
+      background-position: -35px 0;
+    }      
+    
+      .social_media_facebook_aqua:hover {
+        background-position: -35px -36px;
+      } 
+      
+	.social_media_youtube_aqua {
+      background-position: 0 -125px;
+    }      
+    
+      .social_media_youtube_aqua:hover {
+        background-position: -0 -161px;
+      } 
+
+   .social_media_zoopy_aqua {
+     float:left;
+     width: 76px;
+     height: 24px;
+     margin-top: 10px;
+     background-position: -71px 0;
+     cursor: pointer;
+     margin-left:4px;
+     position:relative;
+   }   
+   
+    .social_media_zoopy_aqua:hover {
+      background-position: -71px -25px;
+    }       
+
+/* Begin Footer */
+
+#footer_aqua {
+  width:100%;
+  clear:both;
+  margin: 0 auto;
+  position: relative;
+  height: 30px;
+}
+
+  #footer_aqua ul {
+    list-style:none;
+  }
+  
+  #footer_aqua ul li {
+    height:40px;
+
+  } 
+  
+  #footer_aqua ul li.footer_links_aqua {
+    background:#ececec   
+  }
+  
+  .footer_contact_aqua {
+
+    width:195px;
+    height: 16px;
+    position:absolute;
+    left:19px;
+    top:13px;
+    background-position: 0 -357px;
+  } 
+  
+  
+  
+  #footer_aqua ul li.footer_links_aqua ul {
+    margin-top:0;
+    padding-left:380px;
+  }
+  
+  #footer_aqua ul li ul {
+    padding-left: 120px;
+    margin-top:20px;
+  }
+  
+  #footer_aqua ul li ul li {
+    float:left;
+    margin-right:34px;
+    
+  }
+  
+    #footer_aqua ul li.footer_links_aqua ul li {
+      
+      float:left;
+      line-height:40px;
+      text-transform: uppercase;
+      font-size:11px;
+      margin-right:33px;
+    }
+
+ 
+  
+/* Begin common classes */ 
+
+/*#container_aqua a {
+  color: #797979;
+  text-decoration: none;
+}
+
+#container_aqua a:hover {
+  color: #C60651 
+}*/
+
+#container_aqua #rightcol_aqua h1 a {
+  color: #003767;	
+}
+
+#container_aqua #rightcol_aqua h1 a:hover {
+  color: #C60651;	
+}
+
+#header_aqua a, #centercol_aqua a {
+	color: #797979;
+}
+
+#header_aqua a:hover, #centercol_aqua a:hover {
+	color: #C60651;
+}
+
+.cursor_default_aqua {
+  cursor: default;
+}
+
+.float_left {
+  float:left;
+}
+
+.float_right {
+  float:right;
+}
+
+.type_bold {
+  font-weight: bold;
+}
+
+.blue_aqua {
+  color:#003767;
+}
+
+.purple_aqua {
+  color: #2180a2;
+}
+
+.orange_aqua {
+  color: #f2a941;
+}
+
+.light_green_aqua {
+  color: #9dc21c;
+}
+
+.light_blue_aqua {
+  color: #00a2d2;
+}
+
+.dark_green_aqua {
+  color: #57a53d;
+}
+
+.dark_red_aqua {
+  color:#e53138;
+}
+
+
+#top_banners_aqua {
+  height: 86px;
+  padding-top: 22px;
+  clear:left;
+}
+
+  .banner_container_aqua {
+    width:225px;
+    height:84px;
+    position:relative;
+    /*overflow:hidden;*/
+    float:left;
+    margin-right: 20px;
+  }
+  
+    .banner_container_final_aqua {
+      margin-right:0
+    }
+    
+    #banner_shopping_aqua ul li {
+    }
+    
+    #banner_shopping_aqua {
+      background-position: 0 0;
+    }
+    
+    #banner_recipes_aqua {
+      background-position: -225px 0;
+    }     
+
+    #banner_travel_aqua {
+      background-position: -450px 0;
+    } 
+    
+    #banner_locate_aqua {
+      background-position: -675px 0;
+    }
+    
+    .banner_content_aqua {
+      margin-top: 37px;
+      margin-left:88px;
+    }  
+    
+    .banner_content_aqua ul {
+      color: #fff;
+      list-style: none;
+      font-size: 12px;
+    }
+    
+    .banner_content_aqua ul li {
+
+      padding-bottom:0;
+      margin-bottom:3px;      
+    }
+    
+    .banner_content_aqua ul li a {
+      color:#fff;
+      text-decoration: none;
+      padding-right: 12px;
+      background: url(../images/aqua/navigation_arrows.png) top right no-repeat;
+    }  
+    
+    
+    #banner_shopping_aqua .banner_content_aqua ul li a:hover {
+      color: #780216;
+      background-position: right -15px;
+    }     
+
+    #banner_recipes_aqua .banner_content_aqua ul li a:hover {
+      color: #507a26;
+      background-position: right -30px;
+    } 
+    
+    #banner_travel_aqua .banner_content_aqua ul li a:hover {
+      color: #003767;
+      background-position: right -45px;
+    } 
+    
+    #banner_locate_aqua .banner_content_aqua ul li a:hover {
+      color: #7fb6e6;
+	  background-position: right -60px;
+    }              
+    
+/* Begin Typography */
+
+#container_aqua h2 {
+  font-family: 'CachetStdBold', arial;
+  letter-spacing: normal;
+  font-size:14px;
+  font-weight: normal;
+}    
+
+h2.arial {
+  font-family: arial;
+  font-size:12px;
+  font-weight: bold;
+}
+
+h1.arial {
+  font-size:14px;
+  letter-spacing: normal;  
+  font-family: arial;
+  font-weight: bold;
+  padding-bottom:10px;
+}
+
+.footer_banner_container_aqua h2 {
+  font-size:16px;
+  padding-bottom:5px;
+}
+
+
+/* Begin sprites */
+
+.image_pack_one_aqua {
+  background-image: url(../images/aqua/image_pack_one.png);
+  background-repeat: no-repeat; 
+}
+
+.image_pack_two_aqua {
+  background-image: url(../images/aqua/image_pack_two.jpg);
+  background-repeat: no-repeat; 
+}
+
+.image_pack_three_aqua {
+  background-image: url(../images/aqua/image_pack_three.png);
+  background-repeat: no-repeat; 
+}
+
+.image_pack_gifs {
+  background-image: url(../images/aqua/image_pack_transparent.png);
+  background-repeat: none;
+}
+
+.image_pack_gradients {
+  background-image: url(../images/aqua/image_pack_gradients.gif);
+  background-repeat: repeat-x;
+}
+
+.clear {
+	clear: both;
+}
+
+/*HUGGIES*/
+.btnGetYours {
+   position:absolute;width:215px;height:80px;left:190px;top:67px;background-image:url(/picknpay/media_stream/picknpay/1/batch_11/110055/images/btn_getYours.jpg);background-repeat:no-repeat; background-position: 0 0;cursor:pointer
+}
+.btnGetYours:hover {
+   background-position: 0 -80px;
+}
+
+.btnGetYours a {width:215px;height:80px;position:absolute}
+.btnGetYours  a span {width:215px;height:80px;visibility: hidden}
+
+  .termsHuggiesBtn {
+    width:249px; height:70px; display:block; background-image: url(/picknpay/media_stream/picknpay/1/batch_11/110055/images/termsOver.jpg);background-repeat:no-repeat; background-position: 0 0;cursor:pointer
+  }
+
+.termsHuggiesBtn:hover {
+   background-position: 0 -71px;
+}
+
+ .termsHuggiesBtn a {width:249px; height:71px;position:relative}
+.termsHuggiesBtn  a span {width:249px; height:71px;visibility: hidden}
+
+
+/*YOUTUBE*/
+.social_media_container_aqua {
+    width:150px;
+    height:36px;
+    margin:0 auto;
+    position:relative  
+  }
+
+.social_media_youtube_aqua {
+      background-position: 0 -125px;
+    }      
+    
+.social_media_youtube_aqua:hover {
+        background-position: -0 -161px;
+      } 
+
+/* My Tools Update */
+
+.mytools_upper {
+	height: 7px;
+	width: 144px;
+	z-index: 2;
+	background-image: url("../images/aqua/mytools_upper.png");
+	background-repeat: no-repeat;
+}
+
+.mytools_lower {
+	height: 7px;
+	width: 144px;
+	z-index: 2;
+	background-image: url("../images/aqua/mytools_lower.png");
+	background-repeat: no-repeat;
+}
+
+/* Smart Shopper */
+
+.text10 { font-size: 10px; }
+
+.cachet_purple_bold {
+	color: #981d85;
+	font-weight: bold;
+}
+
+.sp_header_blue {
+	color: #4e80c1;
+}
+
+.sp_header_green {
+	color: #75c044;
+}
+
+.reg_navy12 {
+	color: #003767;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.reg_passport {
+	color: #003767;
+	font-weight: bold;
+	text-align: center;
+}
+
+#ss_register_header .pink_14 {
+	margin-bottom: 10px;
+}
+
+.ss_h1 {
+	color: #003767;
+	font-size: 20px;
+	margin-bottom: 20px; 
+	font-family: 'CachetStdBold',Arial;
+}
+
+#ss_about_header {
+	background: url('../images/smartshopper/about_header.gif') no-repeat;
+	width:688px;
+	height:177px; 
+}
+		
+#ss_about_header_in {
+	background: url('../images/smartshopper/about_header_in.gif') no-repeat;
+	width:688px;
+	height:342px;
+}
+
+#ss_about_header_out {
+	background: url('../images/smartshopper/about_header_out.gif') no-repeat;
+	width:688px;
+	height:345px;
+}
+
+#ss_about_bg {
+	background: url('../images/smartshopper/about_bg_top.gif') no-repeat;
+	width:665px;
+	height:11px;
+	padding-left: 25px;
+}
+
+#ss_about_body {
+	/*border-right: 1px solid #ebebeb;
+	border-left: 1px solid #ebebeb;
+	background-color: #f3f3f3;*/
+	padding: 0 20px 0 20px;
+}
+	
+	#about_not_logged_in, #about_logged_in {
+		padding: 15px 0 0 15px;	
+	}
+	
+	#about_not_logged_in p {
+		margin-left: 35px;	
+	}
+	
+	#voucher_login {
+		background: url('../images/smartshopper/voucher_login.gif') no-repeat;
+		width:457px;
+		height:12px;
+		margin-bottom: 20px;
+	}
+	
+	#register_card {
+		background: url('../images/smartshopper/register_your_card.gif') no-repeat;
+		width:359px;
+		height:12px;
+		margin-bottom: 20px;
+	}
+	
+	.orange_info {
+		background: url('../images/smartshopper/orange_info.png') no-repeat;
+		width:26px;
+		height:21px;
+		float: left;
+	}
+	
+	#have_login_details {
+		float: left;
+		margin-top: 15px;
+	}
+	
+	#dont_have_login_details {
+		float: left;
+		margin: 15px 0 0 20px;
+	}
+		
+	#in_store {
+		background: url('../images/smartshopper/dont_have_card.gif') no-repeat; ;
+		width:477px;
+		height:29px;
+		margin: 35px 0 0 0;
+	}
+	
+	#about_copy_help {
+	}
+	#about_copy {
+		border-left: 1px #EBEBEB solid;
+		border-right: 1px #EBEBEB solid;
+		padding: 0 15px;
+	}
+			#about_copy h2, #about_copy_help h2 {
+				color: #4e80c1;
+				font-size: 23px;
+				font-family: 'CachetStdBold',Arial;
+				padding: 10px 0;
+			}
+			
+			#about_copy h3, #about_copy_help h3 {
+				color: #4e80c1;
+				font-size: 19px;
+				font-family: 'CachetStdBold',Arial;
+				margin-bottom: 10px;
+			}
+	#about_top {
+		background: url(../images/smartshopper/about_border_top.gif) no-repeat;
+		width: 650px;
+		height: 7px;
+	}
+	
+	#about_bottom {
+		background: url(../images/smartshopper/about_border_bottom.gif) no-repeat;
+		width: 650px;
+		height: 6px;
+	}
+
+#ss_about_footer {
+	background: url('../images/smartshopper/grey_border_bottom.gif') no-repeat;
+	width:690px;
+	height:11px;
+}
+
+#smartshopper_registration_header {
+	height: 69px;
+}
+
+#name {
+	padding: 3px 0 0 0;
+	color: #82A9D1;
+	font-family: Arial;
+	float: left;
+	font-weight: bold;
+}
+
+#points {
+	/*background: url('../images/smartshopper/smart_points.gif') no-repeat;*/
+	color: #75C044;
+	padding: 3px 0 0 5px;
+   font-family: Arial;
+	font-size: 12px;
+	float:left;
+	font-weight: bold;
+}
+#desc {
+	padding: 4px 0 0 5px;
+	font-size: 9px;
+	font-style: italic;
+	color: #8c8c8c;
+	float: left;
+}
+
+#u_name {
+	color: #3777ba;
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+}
+
+#my_voucher_offers, #my_details, #ss_help { 
+	float: left; 
+}
+
+.ss_outline_blue {
+	width: 24px;
+	height: 24px;
+	background: url('../images/smartshopper/ss_table_border_blue.gif') no-repeat;
+	border: none;
+}
+	.ss_outline_blue input {
+		width: 14px;
+		height: 18px;
+		border: none;
+		padding: 2px 0 0 7px;
+		border-color: transparent;
+	}
+	
+.ss_outline_grey {
+	width: 24px;
+	height: 24px;
+	background: url('../images/smartshopper/ss_table_border_grey.gif') no-repeat;
+	border: none;
+}
+	.ss_outline_grey input {
+		width: 14px;
+		height: 22px;
+		border: none;
+		padding: 2px 0 0 7px;
+		border-color: transparent;
+	}	
+
+.ss_store_details_noedit, #select_num_of_d_disabled {
+	float: left;
+	width: 145px;
+	height: 20px;
+	padding: 4px 0 0 7px;
+	margin-right: 5px;
+	background: url('../images/smartshopper/row_grey_disabled.gif') no-repeat;
+}
+
+.ss_store_details {
+	float: left;
+	width: 145px;
+	height: 24px;
+}
+
+	.ss_store_details input {
+		width: 120px;
+		height: 24px;
+		border: none;
+		padding: 0;
+		border-color: transparent;
+	}	
+	
+.pa_label {
+	text-align: right;
+	color: #003767;
+	font-weight: bold;
+	width: 135px;
+	height: 72px;
+	padding: 7px 5px 0 0;
+	background: url('../images/registration/register_internet_access_label_bg.gif') no-repeat;
+}
+
+.pa_input {
+	background: url('../images/registration/register_internet_access_check_bg.gif') no-repeat;
+	width: 236px;
+	height: 79px;
+	padding: 0 3px;
+}
+
+	.pa_input textarea {
+		width: 220px!important;
+		height: 60px;
+		border: none;
+		font-size: 11px;
+		color: #666666;
+		overflow: auto;
+	}
+	
+.purple24 {
+	color: #981e85;
+	font-size: 24px;
+	font-family: 'CachetStdBold',Arial;
+}
+
+.blue24 {
+	color: #3777ba;
+	font-size: 24px;
+	font-family: 'CachetStdBold',Arial;
+}
+
+.green24 {
+	color: #74be44;
+	font-size: 24px;
+	font-family: 'CachetStdBold',Arial;
+}
+
+/** Careers **/
+     
+     
+.image_pack_gradients_careers {
+      background-image: url(../images/aqua/careersHeadingBgs.jpg);
+}
+ 
+ 
+.module_wrapper_careers_aqua {
+  float: left;
+  height: auto;
+  margin-bottom: 25px;
+  position: relative;
+}
+ 
+.module_header_careers_aqua {
+  background-position: 0 0;
+  color: #FFFFFF;
+  height: 32px;
+  left: 0;
+  line-height: 32px;
+  position: absolute;
+  text-indent: 13px;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+ 
+#heading_careers_pnp_aqua  {
+  width:122px;
+  height: 12px;
+  background-position: -263px -167px;
+  margin-left:10px;
+  position:relative;
+  top:10px;
+}
+ 
+.module_careers_content_aqua {
+  background: none repeat scroll 0 0 #E9E9E9;
+  border-left: 1px solid #E9E9E9;
+  border-right: 1px solid #E9E9E9;
+  float: left;
+  padding-top: 32px;
+  position: relative;
+  width:218px;
+}
+ 
+.module_content_aqua ul, .module_careers_content_aqua ul {
+  list-style:none;
+  margin:0;
+  height:242px;
+}
+ 
+.module_careers_content_aqua ul {
+  float: left;
+  margin-left: 9px;
+  width: 202px;
+  padding: 10px 0;
+  height: auto;
+}
+ 
+  .module_content_aqua ul li, .module_careers_content_aqua ul li {
+    padding: 10px;
+    border-top: 1px dotted #d5d5d5;
+    position: relative;
+  }
+ 
+      .module_careers_content_aqua ul li {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: medium none;
+        float: left;
+        margin-bottom: 1px;
+        padding: 5px;
+        width: 192px;
+      }
+     
+.videoImageHolder {
+  float: left;
+  height: 60px;
+  padding-right: 10px;
+  width: 80px;
+}
+ 
+.module_careers_footer_aqua {
+  width:220px;
+  margin-left:0;
+  height:8px;
+  background-position: -263px -180px;
+  margin-top:0;
+  overflow:hidden
+}
+ 
+.module_footer_careers_container_aqua {
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  background:#f2f2f2
+}
+ 
+.fullWindowWidth {
+      position:absolute; height:100%; width:100%; left: 0; top:0; background: none;
+}
+ 
+      .fullScreenOverlay {
+      position: absolute;
+      width:100%;
+      height:100%;
+      z-index: 9998;
+      background: #fff;
+      left:0;
+      top:0;
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);                           
+      opacity: .5;           
+      }
+ 
+ 
+#careers_videoContainer {
+  background: none repeat scroll 0 0 #EDEDED;
+  border: 14px solid #A3A3A3;
+  height: 398px;
+  margin: 0 auto;
+  position: relative;
+  width: 471px;
+  z-index: 9999;
+}
+ 
+      #careers_videoContainer .videoContent {
+            clear: left;
+            height: 316px;
+            margin: 0 auto;
+            width: 431px;
+      }
+     
+      #careers_videoContainer .videoHeading {
+            float:left;
+            height: 30px;
+            width:431px;
+            border-bottom: 1px solid #d8e1e8;
+            margin-bottom:15px;
+            margin-left: 20px;
+            margin-top: 14px;
+            position:relative;
+      }
+     
+      .module_careers_content_aqua li a p {
+            color: #7d7d7d;
+      }
+     
+      .module_careers_content_aqua li:hover {
+            background: #d9e1e8;
+            cursor: pointer;
+      }
+     
+      .module_careers_content_aqua li:hover a p {
+            color: #003767;
+      }    
+     
+      .videoHeading p {
+            font-weight: bold;
+            color: #003767;
+            font-size:12px;
+            height:30px;
+            line-height:30px;
+            text-align: left;
+      }
+     
+      .videoClose_aqua {
+            width:20px;
+            height: 20px;
+            background-position: -263px -147px;
+            position:absolute;
+            right:0;
+            top: 0;
+            cursor: pointer;
+      }
+ 
+     
+    #careers_videoContainer .left_bottom_corner_aqua {
+      left:-14px;
+      bottom: -14px;
+      background-position: -12px 0;
+      position:absolute;
+    }
+   
+    #careers_videoContainer .left_top_corner_aqua {
+      left:-14px;
+      top: -14px;
+      background-position: 0 0;
+      position:absolute;
+    }    
+    
+    #careers_videoContainer .right_top_corner_aqua {
+      right:-14px;
+      top: -14px;
+      background-position: -6px 0;
+      position:absolute;
+    }         
+ 
+    #careers_videoContainer .right_bottom_corner_aqua {
+      right:-14px;
+      bottom: -14px;
+      background-position: -18px 0;
+      position:absolute;
+    }
+   
+    .flashSideContent {
+      padding-top:0;
+    }
+    
+    .higherZindex_aqua {
+      z-index:10
+    }
+ 
+      .flashSideContent ul li {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: medium none;
+        float: left;
+        margin-bottom: 1px;
+        padding: 0;
+        overflow: hidden;
+        width: 202px;
+      }
+     
+      .module_footer_careers_container_flash_aqua {
+            bottom:0;
+      }
+     
+      .flashSideContent ul {
+            padding: 5px 0;
+      }
+	
+	
+	/* banner additions */
+	.footer_banner_content_aqua a p {
+		font-size: 12px;
+		color: #666666;
+		margin-top:0
+	}
+	
+	.footer_banner_heading_aqua {
+		height:20px;
+	}
+	
+/****************** HOUSE BRAND STYLES STARTS **************************/
+
+#housebrands_aqua .finest_aqua { background:url(../images/aqua/housebrands/1_Finest.jpg) no-repeat; width:1495px; height:472px; color:#a2a3a5; font-family:Arial, sans-serif; font-size:12px; line-height:16px; float:left }
+#housebrands_aqua #finestLeft_aqua { float:left }
+#housebrands_aqua #finestRight_aqua { float:left; padding:71px 0 0 312px }
+#housebrands_aqua .finestLogo_aqua { margin:0 35px 0 22px; float:left}
+#housebrands_aqua .finestIntro_aqua { padding:71px 0 0 0; width:268px; float:left }
+#housebrands_aqua .finestIntro_aqua p { margin:11px 0 26px 0; padding:0 }
+#housebrands_aqua .finestSeal_aqua { float:left; width:146px; }
+#housebrands_aqua .finestStory_aqua { float:left; width:400px;}
+#housebrands_aqua .finestStory_aqua p{ margin:19px 0 0 0; padding:0}
+
+#housebrands_aqua .pnp_aqua { background:url(../images/aqua/housebrands/2_pnp.jpg) no-repeat; width:1610px; height:472px; color:#fff; font-family:Arial, sans-serif; font-size:12px; line-height:16px; float:left  }
+#housebrands_aqua #pnpLeft_aqua { float:left }
+#housebrands_aqua #pnpRight_aqua { float:left; padding:79px 0 0 420px }
+#housebrands_aqua .pnpIntro_aqua { padding:31px 0 0 166px; width:335px; float:left }
+#housebrands_aqua .pnpIntro_aqua img.logo { display:block; padding-bottom:22px }
+#housebrands_aqua .pnpIntro_aqua p { margin:11px 0 26px 0; padding:0 }
+#housebrands_aqua .pnpStory_aqua { float:left; width:460px;}
+#housebrands_aqua .pnpStory_aqua p{ margin:15px 0 0 0; padding:0}
+
+#housebrands_aqua .noname_aqua { background:url(../images/aqua/housebrands/3_noname.jpg) no-repeat; width:1610px; height:472px; color:#fff; font-family:Arial, sans-serif; font-size:12px; line-height:16px; float:left  }
+#housebrands_aqua #nonameLeft_aqua { float:left }
+#housebrands_aqua #nonameRight_aqua { float:left; padding:79px 0 0 469px }
+#housebrands_aqua .nonameIntro_aqua { padding:31px 0 0 166px; width:318px; float:left }
+#housebrands_aqua .nonameIntro_aqua img.logo { display:block; padding-bottom:22px }
+#housebrands_aqua .nonameIntro_aqua p { margin:11px 0 26px 0; padding:0 }
+#housebrands_aqua .nonameStory_aqua { float:left; width:520px;}
+#housebrands_aqua .nonameStory_aqua p{ margin:15px 0 0 0; padding:0; color:#003767}
+
+#housebrands_aqua .green_aqua { background:url(../images/aqua/housebrands/4_green.jpg) no-repeat; width:1610px; height:472px; color:#fff; font-family:Arial, sans-serif; font-size:12px; line-height:16px; float:left  }
+#housebrands_aqua #greenLeft_aqua { float:left }
+#housebrands_aqua #greenRight_aqua { float:left; padding:71px 0 0 460px }
+#housebrands_aqua .greenLogo_aqua { margin:0 25px 0 137px; float:left}
+#housebrands_aqua .greenIntro_aqua { padding:78px 0 0 0; width:237px; float:left }
+#housebrands_aqua .greenIntro_aqua p { margin:19px 0 18px 0; padding:0 }
+#housebrands_aqua .greenStory_aqua { float:left; width:362px;}
+#housebrands_aqua ul.greenBullet { margin:0; padding:10px 0 0 15px; }
+#housebrands_aqua li.greenBullet { list-style:url(../images/aqua/housebrands/greenBullet.png); margin:0px 0 0 0; padding:0; line-height:16px }
+#housebrands_aqua .greenEndorsed { float:left; padding:30px 0 0 0; }
+
+#housebrands_aqua .organic_aqua { background:url(../images/aqua/housebrands/5_organic.jpg) no-repeat; width:1495px; height:472px; color:#fff; font-family:Arial, sans-serif; font-size:12px; line-height:16px; float:left  }
+#housebrands_aqua #organicLeft_aqua { float:left }
+#housebrands_aqua #organicRight_aqua { float:left; padding:79px 0 0 463px }
+#housebrands_aqua .organicLogo_aqua { margin:0 21px 0 137px; float:left}
+#housebrands_aqua .organicIntro_aqua { padding:79px 0 0 0; width:277px; float:left }
+#housebrands_aqua .organicIntro_aqua p { margin:5px 0 28px 0; padding:0 }
+#housebrands_aqua .organicStory_aqua { float:left; width:362px;}
+#housebrands_aqua ul.organicBullet { margin:0 0 10px 0; padding:10px 0 0 20px; }
+#housebrands_aqua li.organicBullet { list-style:url(../images/aqua/housebrands/organicBullet.png); margin:0px 0 0 0; padding:0; line-height:16px }
+
+/*buttons*/
+
+#housebrands_aqua a.btnFinest {background:url(../images/aqua/housebrands/finestBtn.png) no-repeat 0 -28px; width:140px; height:28px; display:block }
+#housebrands_aqua a.btnFinest:hover {background-position:0 0; }
+#housebrands_aqua a.btnPnp {background:url(../images/aqua/housebrands/pnpBtn.png) no-repeat 0 -28px; width:130px; height:28px; display:block }
+#housebrands_aqua a.btnPnp:hover {background-position:0 0; }
+#housebrands_aqua a.btnGreen {background:url(../images/aqua/housebrands/greenBtn.png) no-repeat 0 -28px; width:160px; height:28px; display:block }
+#housebrands_aqua a.btnGreen:hover {background-position:0 0; }
+#housebrands_aqua a.btnNoname {background:url(../images/aqua/housebrands/nonameBtn.png) no-repeat 0 -28px; width:140px; height:28px; display:block }
+#housebrands_aqua a.btnNoname:hover {background-position:0 0; }
+#housebrands_aqua a.btnOrganic {background:url(../images/aqua/housebrands/organicBtn.png) no-repeat 0 -28px; width:137px; height:28px; display:block }
+#housebrands_aqua a.btnOrganic:hover {background-position:0 0; }
+
+/*Navigation*/
+
+#housebrands_aqua #housebrandNavBar_aqua { background:url(../images/aqua/housebrands/navbar.jpg) no-repeat; width:690px; height:78px; }
+#housebrands_aqua a.navSprite_aqua { height:78px; width:96px; display:block; float:left; margin-left:35px }
+
+#housebrands_aqua a.navFinest_aqua { background:url(../images/aqua/housebrands/navFinest.png) no-repeat 0px -156px; }
+#housebrands_aqua a.navFinest_aqua:hover { background-position:0px -78px; }
+
+#housebrands_aqua a.navPnp_aqua { background:url(../images/aqua/housebrands/navPnp.png) no-repeat 0px -156px; }
+#housebrands_aqua a.navPnp_aqua:hover { background-position:0px -78px; }
+
+#housebrands_aqua a.navnoname_aqua {background:url(../images/aqua/housebrands/navNoname.png) no-repeat 0px -156px; }
+#housebrands_aqua a.navnoname_aqua:hover { background-position:0px -78px; }
+
+#housebrands_aqua a.navgreen_aqua { background:url(../images/aqua/housebrands/navGreen.png) no-repeat 0px -156px; }
+#housebrands_aqua a.navgreen_aqua:hover { background-position:0px -78px; }
+
+#housebrands_aqua a.navorganic_aqua { background:url(../images/aqua/housebrands/navOrganic.png) no-repeat 0px -156px; }
+#housebrands_aqua a.navorganic_aqua:hover { background-position:0px -78px; }
+
+#housebrands_aqua a.nav_active_aqua {background-position:top}
+#housebrands_aqua a.nav_active_aqua:hover {background-position:top}
+
+/*jScrollpane*/
+#housebrands_aqua .housbrandWrapper_aqua { width:7820px}
+#housebrands_aqua .scroll-pane_aqua { width: 690px; height:472px; overflow: auto; }
+#housebrands_aqua .horizontal-only {width: 690px; max-height: 472px;position:relative}
+
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer { overflow: hidden; position: relative;}
+.jspPane {position: absolute;}
+.jspVerticalBar { position: absolute; top: 0; right: 0; width: 16px; height: 100%; background: red; }
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 30px;
+	left: 129px;
+	width: 429px;
+	height: 25px;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: url(../images/aqua/housebrands/track.png) no-repeat;
+	position: relative;
+	width:429px;
+	
+}
+
+.jspDrag
+{
+	background:url(../images/aqua/housebrands/scroller.png) no-repeat;
+	position: relative;
+	top: 3px;
+	left: 3px;
+	cursor: pointer;
+	z-index:999;
+	height:18px !important;
+	width:100px;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 25px;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+.pharmacy_message .ccs_textarea {
+	width: 240px;
+	height: 209px;	
+}
+
+.pharmacy_select select {
+	border: none;	
+}
+
+/*************************** HOUSE BRAND STYLES ENDS ************************/
+
+/*************************** BIRTHDAY BOOST STYLES STARTS ************************/
+
+
+#birthdayBoostContainer_aqua {
+	width: 702px;
+	position: relative;
+	margin: 0 auto
+}
+#birthdayBoostContainer_aqua .header {
+	width: 652px;
+	margin: 0 auto
+}
+#birthdayBoostContainer_aqua img {
+	float: left
+}
+.megaPointsCopyContainer {
+	position: relative;
+	width: 652px;
+	float: left;
+}
+.megaPointsCopyContainer p {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4e4e4e;
+	font-size: 12px;
+	width:500px;
+	margin:0;
+	padding: 10px 0;
+}
+.megaPointsRight_aqua {
+	width: 191px;
+	height: 48px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: url(../images/aqua/smartshopper_birthday/birthdayBoostHeader_4.gif) no-repeat;
+	z-index: -1
+}
+.megaPointsSpecialsContainer_aqua {
+	width: 702px;
+	position: relative;
+	float: left;
+	padding-top:20px
+}
+.megaPointsSpecialsContainer_aqua .leftContent {
+	width: 343px;
+	height: 503px;
+	float: left
+}
+.megaPointsSpecialsContainer_aqua .rightContent {
+	width: 358px;
+	height: 503px;
+	float: right
+}
+.megaPointsSpecialsContainer_aqua .reminderContainer {
+	background: url(../images/aqua/smartshopper_birthday/containerBg.gif) repeat-y;
+	float: left;
+	width: 702px;
+}
+.megaPointsSpecialsContainer_aqua p.reminder {
+	margin: 0;
+	padding: 10px 0 20px 29px;
+	float: left;
+	color: #b0004f;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif
+}
+.megaPointsAmountContainer {
+	width: 318px;
+	float: left;
+	height: 561px
+}
+#birthdayBoostContainer_aqua .megaPointsAmountContainerRight {
+	float: right
+}
+.smartShopperCallToAction {
+	margin-top: 20px;
+	background: url(../images/aqua/smartshopper_birthday/smartShopperCTABg.gif) no-repeat;
+	width: 515px;
+	height: 112px;
+	position: relative;
+	float: left;
+	clear: left
+}
+.smartShopperCallToAction .btnGetSmartToday {
+	position: absolute;
+	left: 167px;
+	top: 64px;
+	width: 160px;
+	height: 27px;
+	background: url(../images/aqua/smartshopper_birthday/getSmartShopperBTNs.gif) no-repeat
+}
+.smartShopperCallToAction .btnGetSmartToday a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-decoration: none
+}
+.smartShopperCallToAction .btnGetSmartToday a span {
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%
+}
+.smartShopperCallToAction .btnGetSmartToday:hover {
+	background-position: 0 -27px
+}
+.footerCopyBirthdayBoost_aqua {
+	margin-top: 20px;
+	float: left;
+	clear: left;
+	width: 100%
+}
+.footerCopyBirthdayBoost_aqua p {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #4e4e4e;
+	font-size: 12px;
+	padding-left: 2px
+}
+#birthdayBoostContainer_aqua .footerCopyBirthdayBoost_aqua  p.heading {
+	font-weight: bold;
+	color: #2384c6
+}
+#birthdayBoostContainer_aqua .footerCopyBirthdayBoost_aqua  p.terms {
+	margin-top: 40px
+}
+#birthdayBoostContainer_aqua .footerCopyBirthdayBoost_aqua  p.terms a {
+	font-size: 11px;
+	color: #930084;
+	text-decoration: underline;
+}	
+
+/*************************** BIRTHDAY BOOST STYLES END ************************/
+
+#nav_easter_aqua {
+	  width: 66px;
+	  background: url('../images/aqua/easter.gif') no-repeat 0 1px;
+	} 
+	
+      #nav_easter_aqua:hover, #nav_easter_active_aqua {
+			width: 66px;
+	  		background: url('../images/aqua/easter.gif') no-repeat 0 1px;
+      }
+
+#nav_goodness_aqua {
+	width: 82px;
+	background: url('../images/aqua/goodness.gif') no-repeat 0 1px;
+} 
+
+#nav_christmas {
+	width: 103px;
+	background: url('../images/aqua/christmas_tab.jpg') no-repeat 0 1px;
+}
+
+	
+      #nav_goodness_aqua:hover, #nav_goodness_active_aqua {
+
+      }
+
+#nav_paralympics_aqua {
+    width: 103px;
+    background: url('../images/aqua/paralympics.gif') no-repeat 0 1px;
+  } 
+  
+#nav_mothersday_aqua {
+	  width: 107px;
+	  background: url('../images/aqua/mothersday_tab.png') no-repeat 0 1px;
+	} 
+	
+      #nav_mothersday_aqua:hover, #nav_mothersday_active_aqua {
+
+      }
+	  
+#nav_fathersday_aqua {
+	  width: 107px;
+	  background: url('../images/aqua/fathersday_tab.png') no-repeat 0 1px;
+	} 
+	
+      #nav_fathersday_aqua:hover, #nav_fathersday_active_aqua {
+
+      }
+
+form#ugcForm_375782 div.ugc_capture_set div.ugc_capture_div_input {
+  height: auto;
+}
