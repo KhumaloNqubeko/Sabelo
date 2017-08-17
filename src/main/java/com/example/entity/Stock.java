@@ -21,14 +21,14 @@ public class Stock implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String description;
-    private String image;
+    private java.sql.Blob image;
     private String category;
     private double price;
 
     public Stock() {
     }
 
-    public Stock(long id, String description, String image, String category, double price) {
+    public Stock(long id, String description, java.sql.Blob image, String category, double price) {
         this.id = id;
         this.description = description;
         this.image = image;
@@ -36,11 +36,11 @@ public class Stock implements Serializable{
         this.price = price;
     }
 
-    public String getImage() {
+    public java.sql.Blob getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(java.sql.Blob image) {
         this.image = image;
     }
 
