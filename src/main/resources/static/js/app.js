@@ -28,10 +28,6 @@ app.controller('RegController', ['$scope', '$http', '$location', '$window', func
                     $scope.cust.password = "";
                     $scope.cust.conf = "";
                 }
-
-
-
-
             }, function () {
                 alert("Failed ");
             });
@@ -137,11 +133,6 @@ app.controller('StockController', ['$scope', '$http', '$location', '$window', fu
                 alert("Failed ");
             });
 
-            var stock = {
-                description: "",
-                category: "",
-                price: ""
-            };
         };
     }]);
 app.controller('GetStockController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
