@@ -8,17 +8,6 @@
 var app = angular.module('app', []);
 app.controller('RegController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
 
-        var vm = this;
-        vm.customers = [];
-        var cust = {
-            name: $scope.name,
-            address: $scope.address,
-            email: $scope.email,
-            number: $scope.number,
-            username: $scope.username,
-            password: $scope.password
-        };
-
         $scope.create = function () {
             var url = "http://localhost:8090/customers/create/";
 
@@ -51,14 +40,6 @@ app.controller('RegController', ['$scope', '$http', '$location', '$window', func
 
 app.controller('LoginController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
 
-        var vm = this;
-        vm.customers = [];
-        var cust = {
-
-            username: $scope.username,
-            password: $scope.password
-        };
-
         $scope.loginCust = function () {
             var url = "http://localhost:8090/customers/login/";
 
@@ -89,15 +70,6 @@ app.controller('LoginController', ['$scope', '$http', '$location', '$window', fu
 
 app.controller('ShopController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 
-        var vm = this;
-        vm.customers = [];
-        var prod = {
-
-            description: $scope.description,
-            price: $scope.price,
-            quantity: $scope.quantity
-        };
-
         $scope.addToCart = function () {
             var url = "http://localhost:8090/shop/products/";
 
@@ -118,14 +90,6 @@ app.controller('ShopController', ['$scope', '$http', '$location', function ($sco
     }]);
 
 app.controller('AdminController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
-
-        var vm = this;
-        vm.customers = [];
-        var admin = {
-
-            username: $scope.username,
-            password: $scope.password
-        };
 
         $scope.loginAdmin = function () {
             var url = "http://localhost:8090/admin/login/";
@@ -155,15 +119,6 @@ app.controller('AdminController', ['$scope', '$http', '$location', '$window', fu
     }]);
 
 app.controller('StockController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
-
-        var vm = this;
-        vm.customers = [];
-        var stock = {
-            description: $scope.description,
-            image: $scope.image,
-            category: $scope.category,
-            price: $scope.price
-        };
 
         $scope.addStock = function () {
             var url = "http://localhost:8090/admin/stock/";
@@ -224,9 +179,6 @@ app.controller('GetStockController', ['$scope', '$http', '$location', '$window',
                     'Content-Type': 'application/json;charset=utf-8;'
                 }
             };
-            alert(product.description + " " + product.price);
-
-
 
             $http.post(url, product, config).then(function (response) {
                 alert(product.description + " added to cart!");
