@@ -275,3 +275,25 @@ app.controller('OrderCtrl', ['$scope', '$http', '$location', '$window', function
             });
         };
     }]);
+
+app.controller('FetchStockController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+
+        $scope.getfunction = function () {
+            var url = "http://localhost:8090/admin/stock/";
+
+            var config = {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8;'
+                }
+            };
+
+
+            $http.get(url, config).then(function (response) {
+                $scope.response = response.data;
+            }, function (response) {
+                $scope.getResultMessage = "Fail!";
+                alert(getResultMessage);
+            });
+        };
+
+    }]);

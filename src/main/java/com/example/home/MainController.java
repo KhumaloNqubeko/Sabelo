@@ -70,4 +70,9 @@ public class MainController {
     private String getLastPage(){
         return "thank";
     }
+    
+    @GetMapping("/getStock")
+    private String getStockPage(){
+        return "myStock";
+    }
 }
