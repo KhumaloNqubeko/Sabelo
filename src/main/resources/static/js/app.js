@@ -223,12 +223,13 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
             });
         };
 
-        $scope.updatequantity = function (cart, quantity) {
+        $scope.updatequantity = function (cart) {
             var url = "http://localhost:8090/product/update/";
 
             $http.post(url, cart, config).then(function (response) {
-
-                alert("Product quantity updated!");
+                $scope.cartUpdate = response.data;
+                alert("Sent");
+                $window.location.href = "http://localhost:8090/update";
             }, function (response) {
                 $scope.getResultMessage = "Failed!";
                 alert(getResultMessage);

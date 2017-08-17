@@ -26,7 +26,7 @@ and open the template in the editor.
     <body >
         <header class="mainHeader">
             <center>
-                <form method="get" action="">
+                <form method="get" action="SearchProduct.do">
                     <input type="text" name="search" placeholder="Search..." id="search-box" />
                 </form>
             </center>
@@ -36,25 +36,26 @@ and open the template in the editor.
                     <ul>
                         <li><a href="#">Smart Shopper</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><a href="http://localhost:8090/Checkout"><b>Perform Checkout</b></a></li>
                         <li><a href="http://localhost:8090/">Logout</a></li>
-                        <li><a href="http://localhost:8090/Cart"><b>View Cart</b></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div ng-app="app" ng-init="getfunction()" ng-controller="GetStockController">
+        <div ng-app="app" ng-controller="GetCartController">
             <center>
                 <form>
-                <table>
-                    <tr ng-repeat="product in response">
-                        <td><img src="Pictures/{{product.image}}.jpg" width="200" height="200" alt=""/></td>
-                        <td>{{product.description}}</td>
-                        <td>R{{product.price}}</td>
-                        {{$scope.product = product;}}
-                        <td><button value="Add To Cart" ng-click="addToCart(product)">Add to Cart</button></td>
-                    </tr>
-                </table>
-            </form>
+                    <table>
+                        <tr>
+                            <td><b>Description:</b> {{cartUpdate.description}}</td>
+                            <td><b>Price</b> R{{cartUpdate.price}}</td>
+                            <td><b>Quantity</b> <input type="number" ng-value="{{cartUpdate.price}}"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Update"/></td>
+                        </tr>
+                    </table>
+                </form>
             </center>
         </div>
         <footer class="mainFooter">

@@ -105,11 +105,8 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/product/update")
-    public void updateProduct(@RequestBody Product product) {
-
-        product.setQuantity(quantity);
-
-        repository.save(product);
+    public Product updateProduct(@RequestBody Product product) {
+        return product;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/shop/product/delete")

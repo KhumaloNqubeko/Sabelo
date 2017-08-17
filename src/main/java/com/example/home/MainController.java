@@ -75,4 +75,9 @@ public class MainController {
     private String getStockPage(){
         return "myStock";
     }
+    
+    @GetMapping("/update")
+    private String getUpdatePage(){
+        return "update";
+    }
 }
