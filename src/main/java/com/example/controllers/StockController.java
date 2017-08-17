@@ -40,4 +40,9 @@ public class StockController {
     public void addStock(@RequestBody Stock stock){
         repo.save(stock);
     }
+    
+    @RequestMapping(value = "/admin/delete", method = RequestMethod.POST)
+    public void deleteStock(@RequestBody Stock stock){
+        repo.delete(stock);
+    }  
 }

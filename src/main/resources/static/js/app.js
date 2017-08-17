@@ -289,10 +289,27 @@ app.controller('FetchStockController', ['$scope', '$http', '$location', '$window
 
 
             $http.get(url, config).then(function (response) {
-                $scope.response = response.data;
+                $scope.products = response.data;
             }, function (response) {
                 $scope.getResultMessage = "Fail!";
                 alert(getResultMessage);
+            });
+        };
+
+        $scope.deletefromstock = function(stock){
+            
+            var url = "http://localhost:8090/admin/delete/";
+            
+            var config = {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8;'
+                }
+            };
+            
+            $http.post(url, stock, config).then(function(response){
+                alert(stock.description + " removed from stock!");
+            }, function(){
+                alert("Failed to remove product!");
             });
         };
 

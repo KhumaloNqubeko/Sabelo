@@ -36,25 +36,21 @@ and open the template in the editor.
                     <ul>
                         <li><a href="#">Smart Shopper</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="http://localhost:8090/Checkout"><b>Perform Checkout</b></a></li>
                         <li><a href="http://localhost:8090/">Logout</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div ng-app="app" ng-init="getcartfunction()" ng-controller="FetchStockController">
+        <div ng-app="app" ng-init="getfunction()" ng-controller="FetchStockController">
             <center>
                 <form>
                     <table>
-                        <tr ng-repeat="cart in products">
-                            <td><b>Description:</b> {{cart.description}}</td>
-                            <td><b>Price</b> R{{cart.price}}</td>
-                            <td><b>Quantity</b> <input type="number" ng-value="{{cart.quantity}}"/></td>
-                            <td><button ng-click="deletefromcart(cart)">Remove</button></td>
-                            <td><button ng-click="updatequantity(cart)">Update</button></td>
-                        </tr>
-                        <tr>
-                            <td ng-init="total()"><b>Total:</b> R{{totalPrice}}</td>
+                        <tr ng-repeat="stock in products">
+                            <td><b>Description:</b> {{stock.description}}</td>
+                            <td><b>Category: </b> R{{stock.category}}</td>
+                            <td><b>Price: </b> R{{stock.price}}</td>
+                            <td><button ng-click="deletefromstock(stock)">Remove</button></td>
+                            <td><button ng-click="updatequantity(stock)">Update</button></td>
                         </tr>
                     </table>
                 </form>
