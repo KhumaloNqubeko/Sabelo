@@ -56,24 +56,24 @@ public class ProductController {
     public void addProduct(@RequestBody Stock product) {
         boolean isAvailable = false;
 
-        for (Product cartItem : repository.findAll()) {
-            if (cartItem.getDescription().equals(product.getDescription())
-                    && cartItem.getPrice() == product.getPrice()) {
+        for (Product p : repository.findAll()) {
+            if (p.getDescription().equals(product.getDescription())
+                    && p.getPrice() == product.getPrice()) {
                 isAvailable = true;
-                cartItem.setQuantity(cartItem.getQuantity() + 1);
+                p.setQuantity(p.getQuantity() + 1);
             }
         }
 
-        Product cart = new Product();
+        Product prod = new Product();
 
         if (!isAvailable) {
-            cart.setDescription(product.getDescription());
-            cart.setPrice(product.getPrice());
-            cart.setQuantity(1);
-            cart.setTotal(0.0);
+            prod.setDescription(product.getDescription());
+            prod.setPrice(product.getPrice());
+            prod.setQuantity(1);
+            prod.setTotal(0.0);
 
         }
-        repository.save(cart);
+        repository.save(prod);
         for(Product p : repository.findAll()){
             
             if(p.getQuantity() == 0){
