@@ -5,17 +5,19 @@
  */
 package com.example.entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author User
  */
 @Entity(name = "deliveryaddress")
-public class DeliveryAddress {
+public class DeliveryAddress implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -25,11 +27,12 @@ public class DeliveryAddress {
     private String snumber;
     private String bname;
     private String unumber;
+    private long custID;
 
     public DeliveryAddress() {
     }
 
-    public DeliveryAddress(long id, String city, String suburb, String street, String snumber, String bname, String unumber) {
+    public DeliveryAddress(long id, String city, String suburb, String street, String snumber, String bname, String unumber, long custID) {
         this.id = id;
         this.city = city;
         this.suburb = suburb;
@@ -37,7 +40,18 @@ public class DeliveryAddress {
         this.snumber = snumber;
         this.bname = bname;
         this.unumber = unumber;
+        this.custID = custID;
     }
+
+    public long getCustID() {
+        return custID;
+    }
+
+    public void setCustID(long custID) {
+        this.custID = custID;
+    }
+
+    
 
     public long getId() {
         return id;

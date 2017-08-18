@@ -86,8 +86,9 @@ public class MainController {
         return "bootIndex";
     }
     
-    @GetMapping("/address")
-    private String getAddressPage(){
-        return "addressDetails";
+    
+     @GetMapping("/addess")
+    private String getPage1(){
+        return "addressD";
     }
 }

@@ -59,18 +59,4 @@ public class LoginController {
         
         return c;
     }
-    
-    @RequestMapping(value = "/login/getUser")
-    public Customer getCurrentUser(Login login){
-        Customer customer = new Customer();
-        
-        for(Customer c : customerRepo.findAll()){
-            if(c.getUsername().equalsIgnoreCase(login.getUsername())){
-                if(c.getPassword().equals(login.getPassword())){
-                    customer = c;
-                }
-            }
-        }        
-        return customer;
-    }
 }

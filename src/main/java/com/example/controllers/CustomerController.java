@@ -31,81 +31,61 @@ import org.springframework.http.MediaType;
  */
 @RestController
 public class CustomerController {
-
+    
+  
+    
     @Autowired
     private CustomerRepository repository;
-
+    
     @Autowired
     private LoginRepository loginRepo;
-
+    
     @RequestMapping("/customers")
-    public List<Customer> getCustomers() {
+    public List<Customer> getCustomers(){
         List<Customer> customers = new ArrayList<Customer>();
-
-        for (Customer c : repository.findAll()) {
+        
+        for(Customer c : repository.findAll()){
             customers.add(c);
         }
-
+        
         return customers;
     }
-
+    
     @RequestMapping("/customer/{id}")
-    public Customer getPerson(@PathVariable long id) {
+    public Customer getPerson(@PathVariable long id){
         return repository.findOne(id);
     }
-
+    
     @RequestMapping(method = RequestMethod.POST, value = "/customers/create")
-    public void addPerson(@RequestBody Customer c) {
+    public void addPerson(@RequestBody Customer c){
         repository.save(c);
     }
-
+    
     @RequestMapping(method = RequestMethod.POST, value = "/customers/login")
-    public Customer loginCust(@RequestBody Login login) {
+    public Customer loginCust(@RequestBody Login login){
         Customer customer = new Customer();
-        boolean isTrue = true;
-
-        for (Customer c : repository.findAll()) {
-
+        
+        for(Customer c : repository.findAll()){
+           
             String u = login.getUsername();
             String p = login.getPassword();
-
-            if (u.equals(c.getUsername()) && p.equals(c.getPassword())) {
-
-                List<Login> list = new ArrayList<>();
-
-                loginRepo.findAll().forEach(list::add);
-
-                if (list.isEmpty()) {
-                    loginRepo.save(login);
-                } else {
-                    for (Login log : list) {
-
-                        if (u.equals(log.getUsername()) && p.equals(log.getPassword())) {
-                            isTrue = false;
-                        }
-
-                    }
-
-                    if (isTrue) {
-                        loginRepo.save(login);
-                    }
-                }
+            
+            if(u.equals(c.getUsername()) && p.equals(c.getPassword())){
+                loginRepo.save(login);
                 customer = c;
-
             }
         }
-
         return customer;
-
+        
     }
-
+    
     @RequestMapping(method = RequestMethod.PUT, value = "/customer/{id}")
-    public void updatePerson(@RequestBody Customer c, @PathVariable long id) {
+    public void updatePerson(@RequestBody Customer c, @PathVariable long id){
         repository.save(c);
     }
-
+    
     @RequestMapping(method = RequestMethod.DELETE, value = "/customer/{id}")
-    public void deletePerson(@RequestBody long id) {
+    public void deletePerson(@RequestBody long id){
         repository.delete(id);
     }
 }

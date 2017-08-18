@@ -25,6 +25,9 @@ public class AddressController {
     
     @RequestMapping(value = "/address/add", method = RequestMethod.POST)
     public void addAddress(@RequestBody DeliveryAddress ad){
+        
         repo.save(ad);
+        
+        //System.out.println(ad.getCustID().getId());
     }
 }

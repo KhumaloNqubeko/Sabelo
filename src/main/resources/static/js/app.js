@@ -5,7 +5,7 @@
  */
 
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngCookies']);
 app.controller('RegController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
 
         $scope.create = function () {
@@ -34,9 +34,9 @@ app.controller('RegController', ['$scope', '$http', '$location', '$window', func
         };
     }]);
 
-app.controller('LoginController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+app.controller('LoginController', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
         var user;
-        
+
         $scope.loginCust = function () {
             var url = "http://localhost:8090/customers/login/";
 
@@ -56,6 +56,15 @@ app.controller('LoginController', ['$scope', '$http', '$location', '$window', fu
                 } else {
                     alert("Successfully logged in as " + $scope.customerData.name);
                     $window.location.href = "http://localhost:8090/allProducts";
+                    
+                    $cookies.put("id", $scope.customerData.id);
+                    $cookies.put("name", $scope.customerData.name);
+                    $cookies.put("email", $scope.customerData.email);
+                    $cookies.put("number", $scope.customerData.number);
+                    $cookies.put("username", $scope.customerData.username);
+                    $cookies.put("password", $scope.customerData.password);
+                    
+                    
                 }
 
             }, function (response) {
@@ -211,7 +220,9 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
                 alert(getResultMessage);
             });
         };
-
+        $scope.proceedCheckout = function () {
+            $window.location.href = "http://localhost:8090/addess";
+        };
         $scope.deletefromcart = function (cart) {
             var url = "http://localhost:8090/shop/product/delete/";
 
@@ -246,8 +257,51 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
             });
         };
     }]);
+app.controller('PlaceOrder', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8;'
+            }
+        };
+        
+        var id = $cookies.get("id");
+        var name = $cookies.get("name");
+        var address = $cookies.get("address");
+        var email = $cookies.get("email");
+        var number = $cookies.get("number");
+        var username = $cookies.get("username");
+        var password = $cookies.get("password");
+        
+        $scope.customer = {
+            id: id, 
+            name: name,
+            address: address,
+            email: email,
+            number: number,
+            username: username,
+            password: password
+        };
+        
+        $scope.sendCustomer = function(){
+            var url = "http://localhost:8090/address/add/";
+            
+            var config = {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8;'
+                }
+            };
+            
+           $http.post(url, $scope.customer, config).then(function () {
+                alert("Delivery address successfully added!");
+                $window.location.href = "http://localhost:8090/thank";
 
-app.controller('OrderCtrl', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+            }, function () {
+                alert("Failed");
+            }); 
+        };
+    }]);
+
+app.controller('DAddressCtrl', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
 
         $scope.addAdress = function () {
             var url = "http://localhost:8090/address/add/";
@@ -258,8 +312,21 @@ app.controller('OrderCtrl', ['$scope', '$http', '$location', '$window', function
                 }
             };
 
+            var id = $cookies.get("id");
+            
+            
 
-            $http.post(url, $scope.d, config).then(function () {
+            $scope.address = {
+                city: $scope.d.city,
+                suburb: $scope.d.suburb,
+                street: $scope.d.street,
+                snumber: $scope.d.snumber,
+                bname: $scope.d.bname,
+                unumber: $scope.d.unumber,
+                custID: id
+            };
+
+            $http.post(url, $scope.address, config).then(function () {
                 alert("Delivery address successfully added!");
                 $window.location.href = "http://localhost:8090/thank";
 
@@ -289,46 +356,44 @@ app.controller('FetchStockController', ['$scope', '$http', '$location', '$window
             });
         };
 
-        $scope.deletefromstock = function(stock){
-            
+        $scope.deletefromstock = function (stock) {
+
             var url = "http://localhost:8090/admin/delete/";
-            
+
             var config = {
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8;'
                 }
             };
-            
-            $http.post(url, stock, config).then(function(response){
+
+            $http.post(url, stock, config).then(function (response) {
                 alert(stock.description + " removed from stock!");
-            }, function(){
+            }, function () {
                 alert("Failed to remove product!");
             });
         };
 
     }]);
 
-app.controller('LoggedInController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+app.controller('LoggedInController', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
 
-        
+
 
         $scope.getLoggedInUser = function () {
-            var url = "http://localhost:8090/login/getUser/";
-
-            var config = {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8;'
-                }
-            };
-
-
-            $http.get(url, config).then(function (response) {
-                $scope.loggedIn = response.data;
-            }, function (response) {
-                $scope.getResultMessage = "Fail!";
-                alert(getResultMessage);
-            });
+            $scope.name = $cookies.get("name");
+            $scope.email = $cookies.get("email");
+            $scope.number = $cookies.get("number");
         };
-        
+
         //$window.location.href = "http://localhost:8090/address/";
+    }]);
+
+app.controller('Direction', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+
+
+
+        $scope.getDirection = function () {
+            $window.location.href = "http://localhost:8090/addess/";
+        };
+
     }]);
