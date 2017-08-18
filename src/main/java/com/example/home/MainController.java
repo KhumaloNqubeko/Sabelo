@@ -80,4 +80,9 @@ public class MainController {
     private String getUpdatePage(){
         return "update";
     }
+    
+    @GetMapping("/div")
+    private String getPage(){
+        return "bootIndex";
+    }
 }

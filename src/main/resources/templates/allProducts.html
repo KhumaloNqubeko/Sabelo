@@ -49,8 +49,7 @@ and open the template in the editor.
                     <tr ng-repeat="product in response">
                         <td><img src="Pictures/{{product.image}}.jpg" width="200" height="200" alt=""/></td>
                         <td>{{product.description}}</td>
-                        <td>R{{product.price}}</td>
-                        {{$scope.product = product;}}
+                        <td>R{{product.price}}</td>                       
                         <td><button value="Add To Cart" ng-click="addToCart(product)">Add to Cart</button></td>
                     </tr>
                 </table>
