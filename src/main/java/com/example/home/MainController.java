@@ -61,7 +61,7 @@ public class MainController {
         return "Cart";
     }
     
-    @GetMapping("/Checkout")
+    @GetMapping("/checkout")
     private String getCheckout(){
         return "Checkout";
     }
@@ -84,5 +84,10 @@ public class MainController {
     @GetMapping("/div")
     private String getPage(){
         return "bootIndex";
+    }
+    
+    @GetMapping("/address")
+    private String getAddressPage(){
+        return "addressDetails";
     }
 }

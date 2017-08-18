@@ -35,7 +35,8 @@ app.controller('RegController', ['$scope', '$http', '$location', '$window', func
     }]);
 
 app.controller('LoginController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
-
+        var user;
+        
         $scope.loginCust = function () {
             var url = "http://localhost:8090/customers/login/";
 
@@ -305,4 +306,29 @@ app.controller('FetchStockController', ['$scope', '$http', '$location', '$window
             });
         };
 
+    }]);
+
+app.controller('LoggedInController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+
+        
+
+        $scope.getLoggedInUser = function () {
+            var url = "http://localhost:8090/login/getUser/";
+
+            var config = {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8;'
+                }
+            };
+
+
+            $http.get(url, config).then(function (response) {
+                $scope.loggedIn = response.data;
+            }, function (response) {
+                $scope.getResultMessage = "Fail!";
+                alert(getResultMessage);
+            });
+        };
+        
+        //$window.location.href = "http://localhost:8090/address/";
     }]);

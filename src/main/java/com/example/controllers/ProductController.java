@@ -69,6 +69,7 @@ public class ProductController {
         if (!isAvailable) {
             prod.setDescription(product.getDescription());
             prod.setPrice(product.getPrice());
+            prod.setImageURL(product.getImage());
             prod.setQuantity(1);
             prod.setTotal(0.0);
 

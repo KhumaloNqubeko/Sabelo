@@ -3,13 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.utility;
+package com.example.entity;
+
+import com.example.utility.*;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author User
  */
-public class Login {
+@Entity
+public class Login implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String username;
     private String password;
 

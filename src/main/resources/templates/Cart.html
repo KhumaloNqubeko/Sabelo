@@ -36,7 +36,7 @@ and open the template in the editor.
                     <ul>
                         <li><a href="#">Smart Shopper</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="http://localhost:8090/Checkout"><b>Perform Checkout</b></a></li>
+                        <li><a href="http://localhost:8090/checkout"><b>Perform Checkout</b></a></li>
                         <li><a href="http://localhost:8090/">Logout</a></li>
                     </ul>
                 </nav>
@@ -47,9 +47,10 @@ and open the template in the editor.
                 <form>
                     <table>
                         <tr ng-repeat="cart in products">
+                            <td><img src="Pictures/{{cart.imageURL}}.jpg" width="200" height="200" alt=""/></td>
                             <td><b>Description:</b> {{cart.description}}</td>
                             <td><b>Price</b> R{{cart.price}}</td>
-                            <td><b>Quantity</b> <input type="number" ng-value="{{cart.quantity}}"/></td>
+                            <td><b>Quantity</b> {{cart.quantity}}</td>
                             <td><button ng-click="deletefromcart(cart)">Remove</button></td>
                             <td><button ng-click="updatequantity(cart)">Update</button></td>
                         </tr>

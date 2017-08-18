@@ -8,7 +8,7 @@ package com.example.controllers;
 import com.example.entity.Admin;
 import com.example.entity.Customer;
 import com.example.repository.AdminRepo;
-import com.example.utility.Login;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
