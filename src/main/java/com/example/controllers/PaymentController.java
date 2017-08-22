@@ -5,10 +5,8 @@
  */
 package com.example.controllers;
 
-import com.example.entity.DeliveryAddress;
-import com.example.entity.Product;
-import com.example.repository.AddressRepo;
-import com.example.repository.ProductRepository;
+import com.example.entity.Payment;
+import com.example.repository.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,21 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @author User
  */
 @RestController
-public class AddressController {
-    
+public class PaymentController {
     @Autowired
-    private AddressRepo repo;
+    private PaymentRepo paymentRepo;
     
-    @Autowired
-    private ProductRepository prodRepo;
-    
-    @RequestMapping(value = "/address/add", method = RequestMethod.POST)
-    public void addAddress(@RequestBody DeliveryAddress ad){
-        
-        repo.save(ad);
-        
-        for(Product p : prodRepo.findAll()){
-            prodRepo.delete(p);
-        }
+    @RequestMapping(value = "/payment/add", method = RequestMethod.POST)
+    public void addPayment(@RequestBody Payment payment){
+        paymentRepo.save(payment);
     }
 }

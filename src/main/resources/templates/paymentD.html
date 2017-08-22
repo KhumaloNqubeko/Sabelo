@@ -17,130 +17,59 @@ and open the template in the editor.
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body ng-app="app" ng-submit="addToCart()" ng-controller="ShopController">
+    <body ng-app="app" ng-submit="addPayment()" ng-controller="PaymentCtrl">          
         <header class="mainHeader">
-            <center>
-                <form method="get" action="SearchProduct.do">
-                    <input type="text" name="search" placeholder="Search..." id="search-box" />
-                </form>
-            </center>
             <img src="Pictures/logo1.jpg" alt=""/>
-            <div id="centeredmenu">
-                <nav>
-                    <ul>
-                        <li><a href="#">Smart Shopper</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="http://localhost:8090/login">Login</a></li>
-                        <li><a href="http://localhost:8090/register">Register</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
         </header>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/fanta_grape.png" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/danup.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/p1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/ultr1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/n1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n2.png" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n3.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n4.png" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/head1.jpeg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/head2.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/sp1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/sp2.jpg" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
+        <div>
+            <center>
+                <div class="mainContent">
+                    <div class="content">
+                        <article class="topcontent">
+                            <header>
+                                <h2><a href="#" title="First Post">Payment Invoice</a></h2>
+                                <p>
+                                    <img src="Pictures/visa.png" alt=""/>
+                                </p>
+                            </header>
+                            <footer>
+                                <p class="post-info">Nqubeko</p>
+                                <hr></hr>
+                            </footer>
+                            <content>
+                                <div class="form-style-10">
+                                    <h1>Pick 'n Pay</h1>
+                                    <form>
+                                        <div class="section"><span>1</span>Payment Info</div>
+                                        <div class="inner-wrap">
+                                            <label>Payment amount R{{total}}</label>
+                                            <label>Name of card <input type="text" ng-model="p.cardName" /></label>
+                                            <label>Card number <input type="text" ng-model="p.cardNumber"/></label>
+                                            <label>Expiry date <input type="date" ng-model="p.expiryDate" /></label>
+                                            <label>Security code <input type="text" ng-model="p.securityCode"/></label>
+                                            <label>ZIP/Postal code <input type="text" ng-model="p.ZIP" /></label>
+                                        </div>
+                                        <div class="button-section">
+                                            <input type="submit" ng-click="payAmount()" value="Pay {{total}}"/>
+                                            <span class="privacy-policy">                                               
+                                                <input type="submit" value="Cancel"/>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </content>
+                        </article>
+                    </div>
+                </div>
+            </center>
+        </div>
         <footer class="mainFooter">
             <p>Copyright &copy; <a href="#" title="1stwebdesigner">Khumalo</a></p>
         </footer>
@@ -270,7 +199,6 @@ and open the template in the editor.
                     border-radius: 4px;
                     font-size: 12px;
                     background-color: white;
-                    background-image: url("Pictures/searffdchicon.jpg");
                     background-position: 7px 7px; 
                     background-repeat: no-repeat;
                     padding: 6px 10px 6px 20px;
@@ -299,7 +227,7 @@ and open the template in the editor.
                     margin: auto;
                 }
 
-                /* Caption text 
+                /* Caption text */
                 .text {
                     color: #f2f2f2;
                     font-size: 15px;
@@ -308,7 +236,7 @@ and open the template in the editor.
                     bottom: 8px;
                     width: 100%;
                     text-align: center;
-                }*/
+                }
 
                 /* Number text (1/3 etc) */
                 .numbertext {
@@ -356,52 +284,128 @@ and open the template in the editor.
                 @media only screen and (max-width: 300px) {
                     .text {font-size: 11px}
                 }
-
-                #slideshow {/*slider container css*/
-                    width: 600px;
-                    height: 600px;
-                    overflow: hidden;
-                    margin: 50px auto 50px auto;
-                    box-shadow: 0px 0px 50px #333;
-                    -moz-box-shadow: 0px 0px 50px #333;
-                    -webkit-box-shadow: 0px 0px 50px #333;
+                .form-style-10{
+                    width:450px;
+                    padding:30px;
+                    margin:40px auto;
+                    background: #FFF;
+                    border-radius: 10px;
+                    -webkit-border-radius:10px;
+                    -moz-border-radius: 10px;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
                 }
-                #slideshow ul {/*manage slider scroll elements css*/
-                    width: 4000px;
-                    list-style: none; 
+                .form-style-10 .inner-wrap{
+                    padding: 30px;
+                    background: #F8F8F8;
+                    border-radius: 6px;
+                    margin-bottom: 15px;
                 }
-                #slideshow ul li {
-                    float: left;
+                .form-style-10 h1{
+                    background: #262B65;
+                    padding: 20px 30px 15px 30px;
+                    margin: -30px -30px 30px -30px;
+                    border-radius: 10px 10px 0 0;
+                    -webkit-border-radius: 10px 10px 0 0;
+                    -moz-border-radius: 10px 10px 0 0;
+                    color: #fff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                    font: normal 30px 'Bitter', serif;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    border: 1px solid #262B65;
                 }
-
-                #slideshow-nav {/* Slider navigation container css */
-                    width: 150px;
-                    margin: 0 auto 100px auto;
-                }
-                #slideshow-nav ul {
-                    list-style: none; 
-                }
-                #slideshow-nav ul li {
-                    float: left; 
-                }
-                #slideshow-nav ul li a {/* navigation styling css */
+                .form-style-10 h1 > span{
                     display: block;
-                    width: 20px;
-                    height: 20px;
-                    float: left;
-                    margin: 0 5px;
-                    background: #fff;
-                    text-indent: -9999px;
+                    margin-top: 2px;
+                    font: 13px Arial, Helvetica, sans-serif;
+                }
+                .form-style-10 label{
+                    display: block;
+                    font: 13px Arial, Helvetica, sans-serif;
+                    color: #888;
+                    margin-bottom: 15px;
+                }
+                .form-style-10 input[type="text"],
+                .form-style-10 input[type="date"],
+                .form-style-10 input[type="datetime"],
+                .form-style-10 input[type="email"],
+                .form-style-10 input[type="number"],
+                .form-style-10 input[type="search"],
+                .form-style-10 input[type="time"],
+                .form-style-10 input[type="url"],
+                .form-style-10 input[type="password"],
+                .form-style-10 textarea,
+                .form-style-10 select {
+                    display: block;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    width: 100%;
+                    padding: 8px;
+                    border-radius: 6px;
+                    -webkit-border-radius:6px;
+                    -moz-border-radius:6px;
+                    border: 2px solid #262B65;
+                    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+                }
+
+                .form-style-10 .section{
+                    font: normal 20px 'Bitter', serif;
+                    color: #262B65;
+                    margin-bottom: 5px;
+                }
+                .form-style-10 .section span {
+                    background: #262B65;
+                    padding: 5px 10px 5px 10px;
+                    position: absolute;
                     border-radius: 50%;
                     -webkit-border-radius: 50%;
-                    box-shadow: 0px 0px 30px #000;
-                    -webkit-box-shadow: 0px 0px 30px #000;
+                    -moz-border-radius: 50%;
+                    border: 4px solid #fff;
+                    font-size: 14px;
+                    margin-left: -45px;
+                    color: #fff;
+                    margin-top: -3px;
                 }
-                #slideshow-nav ul li a:hover, #slideshow-nav ul li a.active {
-                    /* hover and active navigation css */
-                    background: #333;
+                .form-style-10 input[type="button"], 
+                .form-style-10 input[type="submit"]{
+                    background: #262B65;
+                    padding: 8px 20px 8px 20px;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    color: #fff;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                    font: normal 30px 'Bitter', serif;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                    border: 1px solid #262B65;
+                    font-size: 15px;
+                }
+                .form-style-10 input[type="button"]:hover, 
+                .form-style-10 input[type="submit"]:hover{
+                    background: #2A6881;
+                    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+                }
+                .form-style-10 .privacy-policy{
+                    float: right;
+                    width: 250px;
+                    font: 12px Arial, Helvetica, sans-serif;
+                    color: #4D4D4D;
+                    margin-top: 0px;
+                    text-align: right;
                 }
             </style>
         </footer>
     </body>
 </html>
+
+

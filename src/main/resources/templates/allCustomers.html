@@ -14,10 +14,11 @@ and open the template in the editor.
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-cookies.min.js"></script>
         <!-- links -->
         <script src="js/app.js" type="text/javascript"></script>
+
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body ng-app="app" ng-submit="addToCart()" ng-controller="ShopController">
+    <body >
         <header class="mainHeader">
             <center>
                 <form method="get" action="SearchProduct.do">
@@ -30,117 +31,30 @@ and open the template in the editor.
                     <ul>
                         <li><a href="#">Smart Shopper</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="http://localhost:8090/login">Login</a></li>
-                        <li><a href="http://localhost:8090/register">Register</a></li>
+                        <li><a href="http://localhost:8090/">Logout</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/fanta_grape.png" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/danup.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/p1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/ultr1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/n1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n2.png" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n3.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/n4.png" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
-        <form>
-            <table>
-                <tr>
-                    <td>
-                        <h6><a href="http://localhost:8090/viewMoreLogin"><b>View More</b></a></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="Pictures/head1.jpeg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/head2.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/sp1.jpg" width="200" height="200" alt=""/>
-                    </td>
-                    <td>
-                        <img src="Pictures/sp2.jpg" width="200" height="200" alt=""/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Fanta_Grape<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Danup<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Peanuts<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                    <td>Ultra Mel<input type="text" ng-model="prod.description" ng-value="Fanta_G" hidden="ON"/></td>
-                </tr>
-                <tr>
-                    <td><b>Price: R14.99</b> <input type="number" ng-model="prod.price" ng-value="14.99" hidden="ON"/></td>
-                    <td><b>Price: R20.99</b></td>
-                    <td><b>Price: R14.43</b></td>
-                    <td><b>Price: R17.15</b></td>
-                </tr>
-            </table>
-        </form>
+        <div ng-app="app" ng-init="getAllOrders()" ng-controller="GetCustomersController">
+            <center>
+                <form>
+                    <table>
+                        <tr ng-repeat="customer in customers | unique : 'id'">
+                            <td>ID: {{customer.id}}</td>
+                            <td><b>Name: </b> {{customer.name}}</td>
+                            <td><b>Address: </b> {{customer.address}}</td>
+                            <td><b>Email: </b> {{customer.email}}</td>
+                            <td><b>Number: </b> {{customer.number}}</td>
+                            <td>
+                                <button ng-click="getOrder(customer)">View Order</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+
         <footer class="mainFooter">
             <p>Copyright &copy; <a href="#" title="1stwebdesigner">Khumalo</a></p>
         </footer>

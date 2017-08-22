@@ -17,11 +17,11 @@ and open the template in the editor.
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body >
+    <body ng-app="app">
         <header class="mainHeader">
             <center>
                 <form method="get" action="">
-                    <input type="text" name="search" placeholder="Search..." id="search-box" />
+                    <input type="text" ng-model="search" placeholder="Search..." id="search-box" />
                 </form>
             </center>
             <img src="Pictures/logo1.jpg" alt=""/>
@@ -36,11 +36,11 @@ and open the template in the editor.
                 </nav>
             </div>
         </header>
-        <div ng-app="app" ng-init="getfunction()" ng-controller="GetStockController">
+        <div ng-init="getfunction()" ng-controller="GetStockController">
             <center>
                 <form>
                 <table>
-                    <tr ng-repeat="product in response">
+                    <tr ng-repeat="product in response | filter:search">
                         <td><img src="Pictures/{{product.image}}.jpg" width="200" height="200" alt=""/></td>
                         <td>{{product.description}}</td>
                         <td>R{{product.price}}</td>                       

@@ -14,81 +14,94 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class MainController {
-    
+
     @GetMapping("/")
-    private String indexHome(){
+    private String indexHome() {
         return "index";
     }
-    
+
     @GetMapping("/register")
-    private String registerCustomer(){
+    private String registerCustomer() {
         return "register";
     }
-    
+
     @GetMapping("/login")
-    private String loginCustomer(){
+    private String loginCustomer() {
         return "login";
     }
-    
+
     @GetMapping("/shop")
-    private String myShop(){
+    private String myShop() {
         return "shop";
     }
-    
+
     @GetMapping("/admin")
-    private String admin(){
+    private String admin() {
         return "admin";
     }
-    
-    
+
     @GetMapping("/stock")
-    private String addStock(){
+    private String addStock() {
         return "addStock";
     }
-    
+
     @GetMapping("/allProducts")
-    private String getAllProducts(){
+    private String getAllProducts() {
         return "allProducts";
     }
-    
+
     @GetMapping("/viewMoreLogin")
-    private String getViewMoreLogin(){
+    private String getViewMoreLogin() {
         return "viewMoreLogin";
     }
-    
+
     @GetMapping("/Cart")
-    private String getCart(){
+    private String getCart() {
         return "Cart";
     }
-    
+
     @GetMapping("/checkout")
-    private String getCheckout(){
+    private String getCheckout() {
         return "Checkout";
     }
-    
+
     @GetMapping("/thank")
-    private String getLastPage(){
+    private String getLastPage() {
         return "thank";
     }
-    
+
     @GetMapping("/getStock")
-    private String getStockPage(){
+    private String getStockPage() {
         return "myStock";
     }
-    
+
     @GetMapping("/update")
-    private String getUpdatePage(){
+    private String getUpdatePage() {
         return "update";
     }
-    
+
     @GetMapping("/div")
-    private String getPage(){
+    private String getPage() {
         return "bootIndex";
     }
-    
-    
-     @GetMapping("/addess")
-    private String getPage1(){
+
+    @GetMapping("/addess")
+    private String getPage1() {
         return "addressD";
+    }
+
+    @GetMapping("/getCustomers")
+    private String getPageCustomers() {
+        return "allCustomers";
+    }
+    
+    @GetMapping("/myOrder")
+    private String getSpecificOrder() {
+        return "order";
+    }
+    
+    @GetMapping("/payment")
+    private String getPayment() {
+        return "payee";
     }
 }

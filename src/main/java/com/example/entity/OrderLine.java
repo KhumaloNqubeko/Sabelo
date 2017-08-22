@@ -27,15 +27,13 @@ public class OrderLine implements Serializable{
     private double price;
     private String imageURL;
     private double total;
-    
-    @OneToOne
-    private Customer customer;
+    private long customer;
     
     
     public OrderLine() {
     }
 
-    public OrderLine(String description, int quantity, double price, String imageURL, double total, Customer customer) {
+    public OrderLine(String description, int quantity, double price, String imageURL, double total, long customer) {
         this.description = description;
         this.quantity = quantity;
         this.price = price;
@@ -88,11 +86,11 @@ public class OrderLine implements Serializable{
         this.total = total;
     }
 
-    public Customer getCustomer() {
+    public long getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(long customer) {
         this.customer = customer;
     }
     

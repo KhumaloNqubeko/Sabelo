@@ -5,15 +5,14 @@
  */
 package com.example.repository;
 
-import com.example.entity.OrderLine;
-import java.util.List;
+import com.example.entity.Payment;
+import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author User
  */
-public interface OrderLineRepo extends CrudRepository<OrderLine, Long>{
-    List<OrderLine> findByCustomer(Long id);
-
+public interface PaymentRepo extends CrudRepository<Payment, Long>{
+    
 }

@@ -6,8 +6,10 @@
 package com.example.controllers;
 
 import com.example.entity.Customer;
+import com.example.entity.OrderLine;
 import com.example.entity.Product;
 import com.example.entity.Stock;
+import com.example.repository.OrderLineRepo;
 import com.example.repository.ProductRepository;
 import com.example.service.CustomerService;
 import com.example.service.ProductService;
@@ -30,11 +32,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProductController {
 
-    @Autowired
-    private ProductService productService;
 
     @Autowired
     private ProductRepository repository;
+    
+    @Autowired
+    private OrderLineRepo orderRepo;
 
     private int quantity;
 
@@ -49,7 +52,7 @@ public class ProductController {
 
     @RequestMapping("/shop/{id}/product/{productId}")
     public Product getProduct(@PathVariable long id) {
-        return productService.getProduct(id);
+        return repository.findOne(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/shop/products")
@@ -114,4 +117,5 @@ public class ProductController {
     public void deleteProduct(@RequestBody Product id) {
         repository.delete(id);
     }
+    
 }
