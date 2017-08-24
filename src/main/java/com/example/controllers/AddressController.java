@@ -5,6 +5,7 @@
  */
 package com.example.controllers;
 
+import com.example.entity.Customer;
 import com.example.entity.DeliveryAddress;
 import com.example.entity.Product;
 import com.example.repository.AddressRepo;
@@ -36,5 +37,18 @@ public class AddressController {
         for(Product p : prodRepo.findAll()){
             prodRepo.delete(p);
         }
+    }
+    
+    @RequestMapping(value = "/getAddress", method = RequestMethod.POST)
+    public DeliveryAddress getAddress(@RequestBody Customer customer){
+        DeliveryAddress d = new DeliveryAddress();
+        
+        for(DeliveryAddress da : repo.findAll()){
+            if(da.getCustID() == customer.getId()){
+                d = da;
+            }
+        }
+        
+        return d;
     }
 }

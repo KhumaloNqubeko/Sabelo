@@ -50,15 +50,7 @@ public class OrderLineController {
                 }
             }
         }
-        /*
-        List<Customer> custDup = new ArrayList<>();
-        
-        for(int x = 0; x < customers.size(); x++){
-            if(customers.get(x).getId() != customers.get(x + 1).getId()){
-                custDup.add(customers.get(x));
-            }
-        }
-         */
+
         return customers;
     }
 
@@ -97,12 +89,37 @@ public class OrderLineController {
         
         System.out.println(customer.getName() + " " + customer.getAddress());
         
+        double total = 0.0;
+        
         for (OrderLine or : orderLineRepo.findAll()) {
-            /*if (or.getCustomer() == customer.getId()) {
+            if (or.getCustomer() == customer.getId()) {
+                total += or.getPrice();
+                or.setTotal(total);
                 orders.add(or);
-            }*/
+            }
         }
 
         return orders;
+    }
+    
+    @RequestMapping(value = "/getOrderTotal", method = RequestMethod.POST)
+    public String getOrderTotal(@RequestBody Customer customer) {
+        String total = "";
+        
+        System.out.println(customer.getName() + " ------------------------------------------");
+        
+        double t = 0.0;
+        
+        for (OrderLine or : orderLineRepo.findAll()) {
+            if (or.getCustomer() == customer.getId()) {
+                t += or.getPrice();
+            }
+        }
+        
+        DecimalFormat fm = new DecimalFormat("##.##");
+        
+        total = fm.format(t);
+        
+        return total;
     }
 }

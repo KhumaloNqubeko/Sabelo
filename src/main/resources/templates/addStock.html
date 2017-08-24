@@ -14,6 +14,7 @@ and open the template in the editor.
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-cookies.min.js"></script>
         <!-- links -->
         <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/imageupload.js" type="text/javascript"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
@@ -47,7 +48,7 @@ and open the template in the editor.
                                 <div class="section"><span>1</span>New Product/(s)</div>
                                 <div class="inner-wrap">
                                     <label>Description <input type="text" ng-model="stock.description"/></label>
-                                    <label>Image URL <input type="text" ng-model="stock.image" /></label>
+                                    <label>Image URL <input type="file" ng-model="stock.image" name="file"/></label>
                                     <label>Category <input type="text" ng-model="stock.category" /></label>
                                     <label>Price <input type="number" ng-model="stock.price" /></label>
                                 </div>
@@ -193,7 +194,6 @@ and open the template in the editor.
                     border-radius: 4px;
                     font-size: 12px;
                     background-color: white;
-                    background-image: url("Pictures/searchicon.png");
                     background-position: 7px 7px; 
                     background-repeat: no-repeat;
                     padding: 6px 10px 6px 20px;

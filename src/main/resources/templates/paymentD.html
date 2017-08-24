@@ -68,6 +68,31 @@ and open the template in the editor.
                         </article>
                     </div>
                 </div>
+                <div ng-app ng-controller="ShowHide" ng-init="parents=[{
+      &#34;father&#34;:& #34; John & #34; ,
+      &#34;mother&#34;:& #34; Mary & #34; ,
+      &#34;kids&#34;:[{
+                    & #34; name & #34; :&#34;Tom&#34;},
+                    { & #34; name & #34; : & #34; Jenny & #34; }]
+                    }, {
+                    & #34; father & #34; : & #34; Robert & #34; ,
+                            & #34; mother & #34; : & #34; Jane & #34; ,
+                            & #34; kids & #34; :[
+                            { & #34; name & #34; : & #34; Tina & #34; },
+                            { & #34; name & #34; : & #34; Harry & #34; }
+                            ]
+                    }];">
+                    <ul ng-repeat="(parentIndex, parent) in parents ">
+                        <li>Mother: <i>{{parent.mother}}</i>
+                        </li>
+                        <li>Father: <i>{{parent.father}}</i>
+                        </li> <a href="#" ng-click="showKids(parentIndex)">Show Kids</a>
+
+                        <ul ng-repeat="kid in parent.kids" ng-show="isShowing(parentIndex)">
+                            <li>{{kid.name}} {{kid.active}}</li>
+                        </ul>
+                    </ul>
+                </div>
             </center>
         </div>
         <footer class="mainFooter">

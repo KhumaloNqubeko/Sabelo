@@ -20,11 +20,6 @@ and open the template in the editor.
     </head>
     <body >
         <header class="mainHeader">
-            <center>
-                <form method="get" action="SearchProduct.do">
-                    <input type="text" name="search" placeholder="Search..." id="search-box" />
-                </form>
-            </center>
             <img src="Pictures/logo1.jpg" alt=""/>
             <div id="centeredmenu">
                 <nav>
@@ -49,6 +44,53 @@ and open the template in the editor.
                             <td>
                                 <button ng-click="getOrder(customer)">View Order</button>
                             </td>
+                            <td>
+                                <button ng-click="getAddress(customer)">Delivery Address</button>
+                            </td>
+                            <td>
+                                <button ng-click="getPayment(customer)">Payment Info</button>
+                            </td>
+                        </tr>
+                        <tr ng-show="show">
+                            <td><hr></hr></td>
+                            <td>Name: <b><br>{{custName}}</br></b></td>
+                            <td>Email: <b><br>{{custEmail}}</br></b></td>
+                            <td>Cell number: <b><br>{{custNumber}}</br></b></td>
+                        </tr>
+                        <tr ng-repeat="order in orders" ng-show="show">
+                            <td><hr></hr></td>
+                            <td>
+                                <img src="Pictures/{{order.imageURL}}.jpg" width="70" height="70" alt=""/>
+                            </td>
+                            <td>
+                                {{order.description}}
+                            </td>
+                            <td>
+                                {{order.quantity}}
+                            </td>
+                            <td>
+                                R{{order.price}}
+                            </td>
+                        </tr>
+                        <!--
+                        <tr ng-show="show">
+                            <td ng-init="getTotal()">Total:       R{{totalPrice}}</td>
+                        </tr>
+                        -->
+                        <tr ng-show="isTrue">
+                            <td><b><br>City: {{address.city}}</br></b></td>
+                            <td><b><br>City: {{address.suburb}}</br></b></td>
+                            <td><b><br>City: {{address.street}}</br></b></td>
+                            <td><b><br>City: {{address.snumber}}</br></b></td>
+                            <td><b><br>City: {{address.bname}}</br></b></td>
+                            <td><b><br>City: {{address.unumber}}</br></b></td>
+                        </tr>
+                        <tr ng-show="isAvailable">
+                            <td><b><br>Card Name: {{payment.cardName}}</br></b></td>
+                            <td><b><br>Card Number: {{payment.cardNumber}}</br></b></td>
+                            <td><b><br>Expiry Date: {{payment.expiryDate}}</br></b></td>
+                            <td><b><br>Security Code: {{payment.securityCode}}</br></b></td>
+                            <td><b><br>ZIP: {{payment.ZIP}}</br></b></td>
                         </tr>
                     </table>
                 </form>
@@ -184,7 +226,6 @@ and open the template in the editor.
                     border-radius: 4px;
                     font-size: 12px;
                     background-color: white;
-                    background-image: url("Pictures/searffdchicon.jpg");
                     background-position: 7px 7px; 
                     background-repeat: no-repeat;
                     padding: 6px 10px 6px 20px;

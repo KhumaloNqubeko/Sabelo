@@ -72,7 +72,7 @@ public class ProductController {
         if (!isAvailable) {
             prod.setDescription(product.getDescription());
             prod.setPrice(product.getPrice());
-            prod.setImageURL(product.getImage());
+            //prod.setImageURL(product.getImage());
             prod.setQuantity(1);
             prod.setTotal(0.0);
 
@@ -100,17 +100,9 @@ public class ProductController {
         return total;
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/product/update1")
-    public int getQuantity(@RequestBody int qty) {
-
-        quantity = qty;
-
-        return quantity;
-    }
-
-    @RequestMapping(method = RequestMethod.POST, value = "/product/update")
-    public Product updateProduct(@RequestBody Product product) {
-        return product;
+    @RequestMapping(method = RequestMethod.POST, value = "/updateQuantity")
+    public void updateProduct(@RequestBody Product product) {
+        repository.save(product);
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/shop/product/delete")

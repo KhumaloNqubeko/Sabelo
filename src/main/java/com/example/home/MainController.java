@@ -104,4 +104,9 @@ public class MainController {
     private String getPayment() {
         return "payee";
     }
+    
+    @GetMapping("/tt")
+    private String getTestFiles() {
+        return "filesTest";
+    }
 }

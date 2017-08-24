@@ -5,6 +5,7 @@
  */
 package com.example.controllers;
 
+import com.example.entity.Customer;
 import com.example.entity.Payment;
 import com.example.repository.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,18 @@ public class PaymentController {
     @RequestMapping(value = "/payment/add", method = RequestMethod.POST)
     public void addPayment(@RequestBody Payment payment){
         paymentRepo.save(payment);
+    }
+    
+    @RequestMapping(value = "/payment/getPayment", method = RequestMethod.POST)
+    public Payment getPayment(@RequestBody Customer customer){
+        Payment p = new Payment();
+        
+        for(Payment payement : paymentRepo.findAll()){
+            if(payement.getCustomerId() == customer.getId()){
+                p = payement;
+            }
+        }
+        
+        return p;
     }
 }

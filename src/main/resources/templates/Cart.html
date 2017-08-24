@@ -47,7 +47,13 @@ and open the template in the editor.
                             <td><b>Price</b> R{{cart.price}}</td>
                             <td><b>Quantity</b> {{cart.quantity}}</td>
                             <td><button ng-click="deletefromcart(cart)">Remove</button></td>
-                            <td><button ng-click="updatequantity(cart)">Update</button></td>
+                            <td><button ng-click="updatequantity()">Update</button></td>
+                            <td ng-show="show">
+                                <input type="number" placeholder="New Quantity" ng-model="cart.quantity"/>
+                            </td>
+                            <td ng-show="show">
+                                <button ng-click="updateQ(cart)">Update</button>
+                            </td>
                         </tr>
                         <tr>
                             <td ng-init="total()"><b>Total:</b> R{{totalPrice}}</td>

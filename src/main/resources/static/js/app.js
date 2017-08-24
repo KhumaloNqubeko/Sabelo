@@ -125,24 +125,170 @@ app.controller('AdminController', ['$scope', '$http', '$location', '$window', fu
     }]);
 
 app.controller('StockController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8;'
+            }
+        };
 
         $scope.addStock = function () {
             var url = "http://localhost:8090/admin/stock/";
 
-            var config = {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8;'
-                }
-            };
+            var fd = new FormData();
+            angular.forEach($scope.stock.image, function (file) {
+                fd.append('file', file);
+            });
 
+            fd.append('stock', JSON.stringify($scope.stock));
 
             $http.post(url, $scope.stock, config).then(function () {
+                //newurl == touploadimg
+                //upload pic $http.post(url, $scope.stock.im)
                 alert($scope.stock.description + " added as stock");
 
             }, function () {
                 alert("Failed ");
             });
 
+        };
+        $scope.upload = function () {
+            var url = "";
+            var fd = new FormData();
+            fd.append("data", angular.toJson($scope.fdata));
+            var i = 0;
+            //for (i = 0; i < $scope.filesArray.length; i++) {
+                fd.append("file", $scope.filesArray);
+            //};
+            
+            var config = {headers: {'Content-Type': undefined},
+                transformRequest: angular.identity
+            };
+            $http.post("http://localhost:8090/testing", fd, config).then(function(){
+                alert("C");
+            }, function(){
+                alert("Error");
+            });
+        };
+        
+        $scope.addsStock = function () {
+
+            var url = "http://localhost:8090/doUpload/";
+
+            var fd = new FormData();
+            angular.forEach('fileUpload', function (file) {
+                fd.append('fileUpload', file);
+            });
+
+            //fd.append('stock', JSON.stringify($scope.stock));
+
+            $http.post(url, fd, {
+                transformRequest: angular.identity,
+                config
+            }).success(function (data) {
+                $scope.status = data;
+                $scope.itemlist.push(data);
+                $scope.message = "New Dish Added Successfully";
+            });
+        };
+
+
+    }]);
+app.directive("fileread", [function () {
+        return {
+            scope: {
+                fileread: "="
+            },
+            link: function (scope, element, attributes) {
+                element.bind("change", function (changeEvent) {
+                    scope.fileread = changeEvent.target.files[0];
+                }
+                );
+            }
+        };
+    }]);
+app.controller('Nqubeko', function ($scope, $http, uploadFile) {
+
+    $scope.uploadImage = function () {
+        var url = "http://localhost:8090/doUpload/";
+        var data = new FormData();
+        data.append('image', image);
+        // Send the data to Server
+        $http.post(url, data, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined, 'Process-Data': false}
+        }).then(function () {
+            alert("Image Added!");
+        }), function () {
+            alert("Error");
+        };
+
+        $scope.continueFileUpload = function () {
+            var uploadUrl = "http://localhost:8090/doUpload/";
+            var formData = new FormData();
+            formData.append("file", file.files[0]);
+            $http({
+                method: 'POST',
+                url: uploadUrl,
+                headers: {'Content-Type': undefined},
+                data: formData,
+                transformRequest: function (data, headersGetterFunction) {
+                    return data;
+                }
+            })
+                    .success(function (data, status) {
+                        alert("success");
+                    });
+
+        };
+
+
+
+        $scope.uploadFile = function () {
+            $scope.stock.image = $scope.files[0];
+            var file = $scope.stock.image;
+            var urlBase = "http://localhost:8090/doUpload";
+            uploadFile.uploadFiletoServer(file, urlBase);
+        };
+        $scope.uploadedFile = function (element) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                $scope.$apply(function ($scope) {
+                    $scope.files = element.files;
+                    $scope.src = event.target.result;
+                });
+            };
+            reader.readAsDataURL(element.files[0]);
+        };
+    };
+});
+
+
+app.service('uploadFile', ['$http', '$scope', function ($http, $scope) {
+        this.uploadFiletoServer = function (file, url) {
+            var fd = new FormData();
+            fd.append('file', file);
+            fd.append('stock', JSON.stringify($scope.stock));
+            $http.post(url, fd, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined, 'Process-Data': false}
+            }).then(function () {
+                alert("Image Added!");
+            }), function () {
+                alert("Error");
+            };
+        };
+    }]);
+
+app.directive("fileInput", ['$parse', function ($parse) {
+        return{
+            restrict: 'A',
+            link: function (scope, ele, attrs) {
+                ele.bind('change', function () {
+                    $parse(attrs.fileInput).
+                            assign(scope, ele[0].files);
+                    scope.$apply();
+                });
+            }
         };
     }]);
 app.controller('GetStockController', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
@@ -271,25 +417,29 @@ app.controller('GetCartController', ['$scope', '$http', '$location', '$window', 
             });
         };
 
-        $scope.updatequantity = function (cart) {
-            var url = "http://localhost:8090/product/update/";
+        $scope.show = false;
 
-            $http.post(url, cart, config).then(function (response) {
-                $scope.cartUpdate = response.data;
-                alert("Sent");
-                $window.location.href = "http://localhost:8090/update";
+        $scope.updatequantity = function () {
+
+            $scope.show = true;
+        };
+
+        $scope.updateQ = function (cart) {
+            var url = "http://localhost:8090/updateQuantity/";
+
+            $scope.product = {
+                id: cart.id,
+                description: cart.description,
+                quantity: cart.quantity,
+                price: cart.price,
+                imageURL: cart.imageURL,
+                total: 0.0
+            };
+
+            $http.post(url, $scope.product, config).then(function (response) {
+                alert("Updated!!");
             }, function (response) {
-                $scope.getResultMessage = "Failed!";
-                alert(getResultMessage);
-            });
-
-            var url1 = "http://localhost:8090/shop/product/update1/";
-            $http.post(url1, quantity, config).then(function (response) {
-
-                alert("Quantity sent!");
-            }, function (response) {
-                $scope.getResultMessage = "Failed!";
-                alert(getResultMessage);
+                alert("Failed!!");
             });
         };
     }]);
@@ -343,7 +493,7 @@ app.controller('DAddressCtrl', ['$scope', '$http', '$location', '$window', '$coo
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        
+
         $scope.addAdress = function () {
             var url = "http://localhost:8090/address/add/";
 
@@ -363,6 +513,7 @@ app.controller('DAddressCtrl', ['$scope', '$http', '$location', '$window', '$coo
 
             $http.post(url, $scope.address, config).then(function () {
                 alert("Delivery address successfully added!");
+
                 $window.location.href = "http://localhost:8090/thank";
 
             }, function () {
@@ -501,17 +652,89 @@ app.controller('GetCustomersController', ['$scope', '$http', '$location', '$wind
                 alert(getResultMessage);
             });
         };
-
+        $scope.show = false;
         $scope.getOrder = function (customer) {
 
             var url = "http://localhost:8090/getOrders/";
 
-            alert(customer.name);
+            $cookies.put("orID", customer.id);
+            $cookies.put("orName", customer.name);
+            $cookies.put("orEmail", customer.email);
+            $cookies.put("orNumber", customer.number);
+            $cookies.put("orAddress", customer.address);
+            $cookies.put("orUsername", customer.username);
+            $cookies.put("orPassword", customer.password);
 
             $http.post(url, customer, config).then(function (response) {
-                $scope.orders = response.data;
-                alert("Orders fetched!!" + customer.name);
 
+                $scope.orders = response.data;
+
+                $scope.custName = $cookies.get("orName");
+                $scope.custEmail = $cookies.get("orEmail");
+                $scope.custNumber = $cookies.get("orNumber");
+
+                $scope.show = true;
+
+                $scope.tot = $scope.orders.total;
+
+            }, function (response) {
+                alert("Failed!!");
+            });
+        };
+
+        $scope.getTotal = function () {
+
+            var id = $cookies("orID");
+            var name = $cookies("orName");
+            var address = $cookies("orAddress");
+            var email = $cookies("orEmail");
+            var number = $cookies("orNumber");
+            var username = $cookies("orUsername");
+            var password = $cookies("orPassword");
+
+
+            $scope.customer = {
+                id: id,
+                name: name,
+                address: address,
+                email: email,
+                number: number,
+                username: username,
+                password: password
+            };
+            var url = "http://localhost:8090/getOrderTotal/";
+
+            $http.post(url, $scope.customer, config).then(function (response) {
+
+                $scope.totalPrice = response.data;
+
+                alert("Passed!!");
+            }, function () {
+                alert("Failed");
+            });
+        };
+
+        $scope.isTrue = false;
+
+        $scope.getAddress = function (customer) {
+            var url = "http://localhost:8090/getAddress/";
+
+            $http.post(url, customer, config).then(function (response) {
+                $scope.address = response.data;
+                $scope.isTrue = true;
+            }, function (response) {
+                alert("Failed!!");
+            });
+        };
+
+        $scope.isAvailable = false;
+
+        $scope.getPayment = function (customer) {
+            var url = "http://localhost:8090/payment/getPayment/";
+
+            $http.post(url, customer, config).then(function (response) {
+                $scope.payment = response.data;
+                $scope.isAvailable = true;
             }, function (response) {
                 alert("Failed!!");
             });
@@ -536,36 +759,68 @@ app.filter('unique', function () {
     };
 });
 
-app.controller('PaymentCtrl', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
+app.controller('MyImageController', function MyController($scope, $http) {
 
-        $scope.addPayment = function () {
-            var url = "http://localhost:8090/payment/add/";
+    //the image
+    $scope.uploadme;
 
-            var config = {
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8;'
+    $scope.uploadImage = function () {
+        var url = "";
+        var fd = new FormData();
+        var imgBlob = dataURItoBlob($scope.uploadme);
+        fd.append('file', imgBlob);
+        $http.post(
+                url,
+                fd, {
+                    transformRequest: angular.identity,
+                    headers: {
+                        'Content-Type': undefined
+                    }
                 }
-            };
+        )
+                .success(function (response) {
+                    console.log('success', response);
+                })
+                .error(function (response) {
+                    console.log('error', response);
+                });
+    };
 
-            var id = $cookies.get("id");
 
-            $scope.total = $cookies.get("total");
+    //you need this function to convert the dataURI
+    function dataURItoBlob(dataURI) {
+        var binary = atob(dataURI.split(',')[1]);
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        var array = [];
+        for (var i = 0; i < binary.length; i++) {
+            array.push(binary.charCodeAt(i));
+        }
+        return new Blob([new Uint8Array(array)], {
+            type: mimeString
+        });
+    }
 
-            $scope.payment = {
-                city: $scope.p.cardName,
-                suburb: $scope.p.cardNumber,
-                street: $scope.p.expiryDate,
-                snumber: $scope.p.securityCode,
-                bname: $scope.p.ZIP,
-                custID: id
-            };
+});
 
-            $http.post(url, $scope.payment, config).then(function () {
-                alert("Payemnt details successfully added!");
-                //$window.location.href = "http://localhost:8090/thank";
 
-            }, function () {
-                alert("Failed");
-            });
+//your directive
+app.directive("fileread", [function () {
+        return {
+            scope: {
+                fileread: "="
+            },
+            link: function (scope, element, attributes) {
+                element.bind("change", function (changeEvent) {
+                    var reader = new FileReader();
+                    reader.onload = function (loadEvent) {
+                        scope.$apply(function () {
+                            scope.fileread = loadEvent.target.result;
+                        });
+                    };
+                    reader.readAsDataURL(changeEvent.target.files[0]);
+                });
+            }
         };
-    }]);
+    }
+]);
+
