@@ -29,7 +29,7 @@ angular.module('fileUpload', [])
         method: 'POST',
         url: 'http://localhost:8090/fileUpload/', // /api/upload
         headers: {
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': undefined
         },
         data: {
           upload: file

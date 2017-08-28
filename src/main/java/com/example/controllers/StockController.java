@@ -6,6 +6,7 @@
 package com.example.controllers;
 
 import com.example.entity.Stock;
+import com.example.entity.UploadFile;
 import com.example.repository.FilesUpload;
 import com.example.repository.StockRepo;
 import java.io.BufferedOutputStream;
@@ -19,8 +20,11 @@ import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -37,13 +42,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author User
  */
 @RestController
-public class StockController {
+public class StockController extends HttpServlet {
+
+    HttpServletRequest request;
 
     @Autowired
     private StockRepo repo;
 
     @Autowired
     private FilesUpload filesRepo;
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value = "/admin/stock")
     public List<Stock> getAllStock() {
@@ -57,9 +66,20 @@ public class StockController {
     }
 
     @RequestMapping(value = "/admin/stock", method = RequestMethod.POST)
-    public void addStock(@RequestBody Stock stock) {
-
+    public @ResponseBody
+    void addStock(@RequestParam("file") MultipartFile file,
+            @RequestParam(value = "description") String description, @RequestParam(value = "category") String category,
+            @RequestParam(value = "price") double price) throws IOException {
+        
+        byte[] bytes = file.getBytes();
+        
+        Stock stock = new Stock();
+        stock.setDescription(description);
+        stock.setImage(bytes);
+        stock.setCategory(category);
+        stock.setPrice(price);
         repo.save(stock);
+        
     }
 
     @RequestMapping(value = "/admin/delete", method = RequestMethod.POST)
@@ -67,66 +87,21 @@ public class StockController {
         repo.delete(stock);
     }
 
-    @RequestMapping(value = "/doUpload", method = RequestMethod.POST)
-    public String handleFileUpload(@RequestParam CommonsMultipartFile[] fileUpload) throws Exception {
-
-        if (fileUpload != null && fileUpload.length > 0) {
-            for (CommonsMultipartFile aFile : fileUpload) {
-
-                System.out.println("Saving file: " + aFile.getOriginalFilename());
-
-                UploadFile uploadFile = new UploadFile();
-                uploadFile.setFileName(aFile.getOriginalFilename());
-                uploadFile.setData(aFile.getBytes());
-                filesRepo.save(uploadFile);
-            }
-        }
-
-        return "Success";
-    }
-
     @RequestMapping(value = "/fileUpload", method = RequestMethod.POST)
+    public @ResponseBody
+    void upload(@RequestParam("file") MultipartFile file,
+            @RequestParam(value = "stockNumber") int stockNumber) throws IOException {
+        String fileName = file.getOriginalFilename();
+        byte[] bytes = file.getBytes();
 
-    public String upload(@RequestParam("name") String name,
-            @RequestParam(value = "file", required = true) MultipartFile file) //@RequestParam ()CommonsMultipartFile[] fileUpload
-    {
-        // @RequestMapping(value="/newDocument", , method = RequestMethod.POST)
-        if (!file.isEmpty()) {
-            try {
-                byte[] fileContent = file.getBytes();
-               // fileSystemHandler.create(123, fileContent, name);
-                return "You successfully uploaded " + name + "!";
-            } catch (Exception e) {
-                return "You failed to upload " + name + " => " + e.getMessage();
-            }
-        } else {
-            return "You failed to upload " + name + " because the file was empty.";
-        }
-    }
+        UploadFile up = new UploadFile();
+        up.setData(bytes);
+        up.setFileName(fileName);
+        up.setId(665L);
+        filesRepo.save(up);
 
-    @RequestMapping("/upload") // //new annotation since 4.3
-    public String singleFileUpload(@RequestParam("file") MultipartFile file,
-            RedirectAttributes redirectAttributes) {
-
-        if (file.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:uploadStatus";
-        }
-
-        try {
-
-            // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-            Path path = Paths.get("" + file.getOriginalFilename());
-            Files.write(path, bytes);
-
-            redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "'");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return "redirect:/uploadStatus";
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(new File("C:/Users/User/Desktop/temp/" + fileName)));
+        bufferedOutputStream.write(bytes);
+        bufferedOutputStream.close();
     }
 }

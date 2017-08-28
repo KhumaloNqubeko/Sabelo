@@ -72,7 +72,7 @@ public class ProductController {
         if (!isAvailable) {
             prod.setDescription(product.getDescription());
             prod.setPrice(product.getPrice());
-            //prod.setImageURL(product.getImage());
+            prod.setImageURL(product.getImage());
             prod.setQuantity(1);
             prod.setTotal(0.0);
 
@@ -88,20 +88,18 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/shop/products/total")
     public String calculateTotal() {
-
         double t = 0;
         for (Product p : repository.findAll()) {
-            t += p.getPrice();
+            t += p.getPrice() * p.getQuantity();
         }
         DecimalFormat fm = new DecimalFormat("##.##");
-
         String total = fm.format(t);
-
         return total;
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/updateQuantity")
     public void updateProduct(@RequestBody Product product) {
+        
         repository.save(product);
     }
 

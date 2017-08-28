@@ -124,173 +124,49 @@ app.controller('AdminController', ['$scope', '$http', '$location', '$window', fu
         };
     }]);
 
-app.controller('StockController', ['$scope', '$http', '$location', '$window', function ($scope, $http, $location, $window) {
+app.controller('StockController', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
         var config = {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
 
+
         $scope.addStock = function () {
             var url = "http://localhost:8090/admin/stock/";
-
-            var fd = new FormData();
-            angular.forEach($scope.stock.image, function (file) {
-                fd.append('file', file);
-            });
-
-            fd.append('stock', JSON.stringify($scope.stock));
+            $scope.isTrue = true;
 
             $http.post(url, $scope.stock, config).then(function () {
-                //newurl == touploadimg
-                //upload pic $http.post(url, $scope.stock.im)
                 alert($scope.stock.description + " added as stock");
-
+                $cookies.put("stockNumber", $scope.stock.stockNumber);
             }, function () {
                 alert("Failed ");
             });
 
         };
-        $scope.upload = function () {
-            var url = "";
-            var fd = new FormData();
-            fd.append("data", angular.toJson($scope.fdata));
-            var i = 0;
-            //for (i = 0; i < $scope.filesArray.length; i++) {
-                fd.append("file", $scope.filesArray);
-            //};
-            
-            var config = {headers: {'Content-Type': undefined},
-                transformRequest: angular.identity
-            };
-            $http.post("http://localhost:8090/testing", fd, config).then(function(){
-                alert("C");
-            }, function(){
-                alert("Error");
-            });
-        };
-        
-        $scope.addsStock = function () {
 
-            var url = "http://localhost:8090/doUpload/";
-
-            var fd = new FormData();
-            angular.forEach('fileUpload', function (file) {
-                fd.append('fileUpload', file);
-            });
-
-            //fd.append('stock', JSON.stringify($scope.stock));
-
-            $http.post(url, fd, {
-                transformRequest: angular.identity,
-                config
-            }).success(function (data) {
-                $scope.status = data;
-                $scope.itemlist.push(data);
-                $scope.message = "New Dish Added Successfully";
-            });
-        };
-
-
-    }]);
-app.directive("fileread", [function () {
-        return {
-            scope: {
-                fileread: "="
-            },
-            link: function (scope, element, attributes) {
-                element.bind("change", function (changeEvent) {
-                    scope.fileread = changeEvent.target.files[0];
-                }
-                );
-            }
-        };
-    }]);
-app.controller('Nqubeko', function ($scope, $http, uploadFile) {
-
-    $scope.uploadImage = function () {
-        var url = "http://localhost:8090/doUpload/";
-        var data = new FormData();
-        data.append('image', image);
-        // Send the data to Server
-        $http.post(url, data, {
-            transformRequest: angular.identity,
-            headers: {'Content-Type': undefined, 'Process-Data': false}
-        }).then(function () {
-            alert("Image Added!");
-        }), function () {
-            alert("Error");
-        };
-
-        $scope.continueFileUpload = function () {
-            var uploadUrl = "http://localhost:8090/doUpload/";
-            var formData = new FormData();
-            formData.append("file", file.files[0]);
-            $http({
-                method: 'POST',
-                url: uploadUrl,
-                headers: {'Content-Type': undefined},
-                data: formData,
-                transformRequest: function (data, headersGetterFunction) {
-                    return data;
-                }
-            })
-                    .success(function (data, status) {
-                        alert("success");
-                    });
-
-        };
-
-
-
+        $scope.selectedUploadFile;
         $scope.uploadFile = function () {
-            $scope.stock.image = $scope.files[0];
-            var file = $scope.stock.image;
-            var urlBase = "http://localhost:8090/doUpload";
-            uploadFile.uploadFiletoServer(file, urlBase);
-        };
-        $scope.uploadedFile = function (element) {
-            var reader = new FileReader();
-            reader.onload = function (event) {
-                $scope.$apply(function ($scope) {
-                    $scope.files = element.files;
-                    $scope.src = event.target.result;
-                });
-            };
-            reader.readAsDataURL(element.files[0]);
-        };
-    };
-});
-
-
-app.service('uploadFile', ['$http', '$scope', function ($http, $scope) {
-        this.uploadFiletoServer = function (file, url) {
-            var fd = new FormData();
-            fd.append('file', file);
-            fd.append('stock', JSON.stringify($scope.stock));
-            $http.post(url, fd, {
+            
+            var stocknumber = $cookies.get("stockNumber");
+            
+            var formData = new FormData();
+            formData.append('file', $scope.selectedUploadFile);
+            formData.append('description', $scope.stock.description);
+            formData.append('category', $scope.stock.category);
+            formData.append('price', $scope.stock.price);
+            
+            $http.post('http://localhost:8090/admin/stock/', formData, {
                 transformRequest: angular.identity,
-                headers: {'Content-Type': undefined, 'Process-Data': false}
+                headers: {'Content-Type': undefined}
             }).then(function () {
-                alert("Image Added!");
-            }), function () {
-                alert("Error");
-            };
+                alert("Success");
+            }, function () {
+                alert("Image size too large!!");
+            });
         };
     }]);
 
-app.directive("fileInput", ['$parse', function ($parse) {
-        return{
-            restrict: 'A',
-            link: function (scope, ele, attrs) {
-                ele.bind('change', function () {
-                    $parse(attrs.fileInput).
-                            assign(scope, ele[0].files);
-                    scope.$apply();
-                });
-            }
-        };
-    }]);
 app.controller('GetStockController', ['$scope', '$http', '$location', '$window', '$cookies', function ($scope, $http, $location, $window, $cookies) {
 
         $scope.getfunction = function () {
@@ -759,68 +635,35 @@ app.filter('unique', function () {
     };
 });
 
-app.controller('MyImageController', function MyController($scope, $http) {
+app.controller('UploadCtrl', function ($scope, $http) {
+    $scope.selectedUploadFile;
+    $scope.uploadFile = function () {
+        var formData = new FormData();
+        formData.append('file', $scope.selectedUploadFile);
+        formData.append('description', $scope.description);
 
-    //the image
-    $scope.uploadme;
-
-    $scope.uploadImage = function () {
-        var url = "";
-        var fd = new FormData();
-        var imgBlob = dataURItoBlob($scope.uploadme);
-        fd.append('file', imgBlob);
-        $http.post(
-                url,
-                fd, {
-                    transformRequest: angular.identity,
-                    headers: {
-                        'Content-Type': undefined
-                    }
-                }
-        )
-                .success(function (response) {
-                    console.log('success', response);
-                })
-                .error(function (response) {
-                    console.log('error', response);
-                });
-    };
-
-
-    //you need this function to convert the dataURI
-    function dataURItoBlob(dataURI) {
-        var binary = atob(dataURI.split(',')[1]);
-        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-        var array = [];
-        for (var i = 0; i < binary.length; i++) {
-            array.push(binary.charCodeAt(i));
-        }
-        return new Blob([new Uint8Array(array)], {
-            type: mimeString
+        $http.post('http://localhost:8090/fileUpload/', formData, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).then(function () {
+            alert("Success");
+        }, function () {
+            alert("Image size too large!!");
         });
-    }
-
+    };
 });
+app.directive('fileModel', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
 
-
-//your directive
-app.directive("fileread", [function () {
-        return {
-            scope: {
-                fileread: "="
-            },
-            link: function (scope, element, attributes) {
-                element.bind("change", function (changeEvent) {
-                    var reader = new FileReader();
-                    reader.onload = function (loadEvent) {
-                        scope.$apply(function () {
-                            scope.fileread = loadEvent.target.result;
-                        });
-                    };
-                    reader.readAsDataURL(changeEvent.target.files[0]);
+            element.bind('change', function () {
+                scope.$apply(function () {
+                    modelSetter(scope, element[0].files[0]);
                 });
-            }
-        };
-    }
-]);
-
+            });
+        }
+    };
+});

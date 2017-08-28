@@ -52,6 +52,7 @@ and open the template in the editor.
                             </td>
                         </tr>
                         <tr ng-show="show">
+                            <td><h4><b>Order Information</b></h4></td>
                             <td><hr></hr></td>
                             <td>Name: <b><br>{{custName}}</br></b></td>
                             <td>Email: <b><br>{{custEmail}}</br></b></td>
@@ -60,7 +61,7 @@ and open the template in the editor.
                         <tr ng-repeat="order in orders" ng-show="show">
                             <td><hr></hr></td>
                             <td>
-                                <img src="Pictures/{{order.imageURL}}.jpg" width="70" height="70" alt=""/>
+                                <img ng-src="data:image/JPEG;base64,{{order.imageURL}}" height="200" width="200"/>
                             </td>
                             <td>
                                 {{order.description}}
@@ -79,11 +80,11 @@ and open the template in the editor.
                         -->
                         <tr ng-show="isTrue">
                             <td><b><br>City: {{address.city}}</br></b></td>
-                            <td><b><br>City: {{address.suburb}}</br></b></td>
-                            <td><b><br>City: {{address.street}}</br></b></td>
-                            <td><b><br>City: {{address.snumber}}</br></b></td>
-                            <td><b><br>City: {{address.bname}}</br></b></td>
-                            <td><b><br>City: {{address.unumber}}</br></b></td>
+                            <td><b><br>Suburb: {{address.suburb}}</br></b></td>
+                            <td><b><br>Street: {{address.street}}</br></b></td>
+                            <td><b><br>Street number: {{address.snumber}}</br></b></td>
+                            <td><b><br>Building name: {{address.bname}}</br></b></td>
+                            <td><b><br>Unit number: {{address.unumber}}</br></b></td>
                         </tr>
                         <tr ng-show="isAvailable">
                             <td><b><br>Card Name: {{payment.cardName}}</br></b></td>

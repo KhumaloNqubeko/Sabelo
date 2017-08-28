@@ -39,15 +39,15 @@ and open the template in the editor.
         <div ng-init="getfunction()" ng-controller="GetStockController">
             <center>
                 <form>
-                <table>
-                    <tr ng-repeat="product in response | filter:search">
-                        <td><img src="Pictures/{{product.image}}.jpg" width="200" height="200" alt=""/></td>
-                        <td>{{product.description}}</td>
-                        <td>R{{product.price}}</td>                       
-                        <td><button value="Add To Cart" ng-click="addToCart(product)">Add to Cart</button></td>
-                    </tr>
-                </table>
-            </form>
+                    <table>
+                        <tr ng-repeat="product in response| filter:search">
+                            <td><img ng-src="data:image/JPEG;base64,{{product.image}}" height="200" width="200"/></td>
+                            <td>{{product.description}}</td>
+                            <td>R{{product.price}}</td>                       
+                            <td><button value="Add To Cart" ng-click="addToCart(product)">Add to Cart</button></td>
+                        </tr>
+                    </table>
+                </form>
             </center>
         </div>
         <footer class="mainFooter">
@@ -179,7 +179,6 @@ and open the template in the editor.
                     border-radius: 4px;
                     font-size: 12px;
                     background-color: white;
-                    background-image: url("Pictures/searffdchicon.jpg");
                     background-position: 7px 7px; 
                     background-repeat: no-repeat;
                     padding: 6px 10px 6px 20px;

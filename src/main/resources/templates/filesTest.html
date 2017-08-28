@@ -10,22 +10,16 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-cookies.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-cookies.min.js"></script>
-        <script src="js/imageupload.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
     </head>
 
-    <body>
-        <div ng-app="fileUpload" class="container">
-            <div class="row" ng-controller="upload">
-                {{3 + 3}}
-                <div class="col-md-6">
-                    <input type="file" fileinput="file" filepreview="filepreview"/>
-                </div>
-                <div class="col-md-6">
-                    <img ng-src="{{filepreview}}" class="img-responsive" ng-show="filepreview"/>
-                </div>
-
-
-            </div>
+    <body ng-app="app">
+        <div ng-controller="UploadCtrl" class="container">
+            <h3>Upload a file...</h3>
+            <input file-model="selectedUploadFile" type="file" name="file"/>
+            <input ng-model="description" type="text" name="description"/>
+            <input ng-model="price" type="number" name="price"/>
+            <button type="button" class="btn btn-default" ng-click="uploadFile()">Upload</button>
         </div>
     </body>
 </html>

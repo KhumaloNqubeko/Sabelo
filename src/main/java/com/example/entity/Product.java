@@ -6,6 +6,7 @@
 package com.example.entity;
 
 import java.io.Serializable;
+import java.sql.Blob;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,14 +25,14 @@ public class Product implements Serializable{
     private String description;
     private int quantity;
     private double price;
-    private String imageURL;
+    private byte[] imageURL;
     private double total;
     
     
     public Product() {
     }
 
-    public Product(long id, String description, int quantity, double price, String imageURL, double total) {
+    public Product(long id, String description, int quantity, double price, byte[] imageURL, double total) {
         this.id = id;
         this.description = description;
         this.quantity = quantity;
@@ -40,11 +41,11 @@ public class Product implements Serializable{
         this.total = total;
     }
 
-    public String getImageURL() {
+    public byte[] getImageURL() {
         return imageURL;
     }
 
-    public void setImageURL(String imageURL) {
+    public void setImageURL(byte[] imageURL) {
         this.imageURL = imageURL;
     }
 

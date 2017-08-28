@@ -45,6 +45,7 @@ public class Stock implements Serializable{
         this.image = image;
     }
 
+
     public long getId() {
         return id;
     }

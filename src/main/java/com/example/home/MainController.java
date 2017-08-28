@@ -109,4 +109,9 @@ public class MainController {
     private String getTestFiles() {
         return "filesTest";
     }
+    
+    @GetMapping("/uploadImg")
+    private String getImageUpload() {
+        return "testC";
+    }
 }

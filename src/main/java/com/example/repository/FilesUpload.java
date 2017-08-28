@@ -5,7 +5,8 @@
  */
 package com.example.repository;
 
-import com.example.controllers.UploadFile;
+
+import com.example.entity.UploadFile;
 import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 

@@ -18,7 +18,7 @@ and open the template in the editor.
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
-    <body ng-app="app" ng-submit="addStock()" ng-controller="StockController">          
+    <body ng-app="app" ng-controller="StockController">          
         <header class="mainHeader">
             <img src="Pictures/logo1.jpg" alt=""/>
             <nav>
@@ -42,21 +42,20 @@ and open the template in the editor.
                         <hr></hr>
                     </footer>
                     <content>
-                        <div class="form-style-10">
+                        <div class="form-style-10" ng-hide="isTrue">
                             <h1>Add Stock</h1>
                             <form>
                                 <div class="section"><span>1</span>New Product/(s)</div>
                                 <div class="inner-wrap">
                                     <label>Description <input type="text" ng-model="stock.description"/></label>
-                                    <label>Image URL <input type="file" ng-model="stock.image" name="file"/></label>
+                                    <label>Image <input file-model="selectedUploadFile" type="file" name="file" filepreview="filepreview"/></label>
                                     <label>Category <input type="text" ng-model="stock.category" /></label>
                                     <label>Price <input type="number" ng-model="stock.price" /></label>
                                 </div>
                                 <div class="button-section">
-                                    <input type="submit" value="Add Product"/>
+                                    <input type="submit" ng-click="uploadFile()" value="Next"/>
                                     <span class="privacy-policy">
                                         <a href="#">Home</a>
-                                        <input type="submit" name="" value="Logut"/>
                                     </span>
                                 </div>
                             </form>

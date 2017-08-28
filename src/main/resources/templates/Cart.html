@@ -40,22 +40,23 @@ and open the template in the editor.
         <div ng-app="app" ng-init="getcartfunction()" ng-controller="GetCartController">
             <center>
                 <form>
-                    <table>
+                    <table class="table table-stripped">
                         <tr ng-repeat="cart in products">
-                            <td><img src="Pictures/{{cart.imageURL}}.jpg" width="200" height="200" alt=""/></td>
+                            <td><img ng-src="data:image/JPEG;base64,{{cart.imageURL}}" height="200" width="200"/></td>
                             <td><b>Description:</b> {{cart.description}}</td>
                             <td><b>Price</b> R{{cart.price}}</td>
                             <td><b>Quantity</b> {{cart.quantity}}</td>
-                            <td><button ng-click="deletefromcart(cart)">Remove</button></td>
-                            <td><button ng-click="updatequantity()">Update</button></td>
+                            <td><button class="glyphicon glyphicon-trash btn" ng-click="deletefromcart(cart)"></button></td>
+                            <td>&emsp;<button class="glyphicon glyphicon-edit btn" ng-click="updatequantity()"></button></td>
                             <td ng-show="show">
-                                <input type="number" placeholder="New Quantity" ng-model="cart.quantity"/>
+                                <input type="number"  placeholder="New Quantity" ng-model="cart.quantity"/>
                             </td>
                             <td ng-show="show">
-                                <button ng-click="updateQ(cart)">Update</button>
+                                <button class="glyphicon glyphicon-floppy-saved btn" ng-click="updateQ(cart)"></button>
                             </td>
                         </tr>
                         <tr>
+                            <td></td><td></td><td></td><td></td>
                             <td ng-init="total()"><b>Total:</b> R{{totalPrice}}</td>
                         </tr>
                     </table>

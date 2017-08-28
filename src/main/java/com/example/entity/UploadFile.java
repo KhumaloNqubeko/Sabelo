@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.controllers;
+package com.example.entity;
 
+import com.example.controllers.*;
 import java.io.Serializable;
+import java.sql.Blob;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,16 @@ public class UploadFile implements Serializable{
     private long id;
     private String fileName;
     private byte[] data;
+    private long stockID;
+
+    public long getStockID() {
+        return stockID;
+    }
+
+    public void setStockID(long stockID) {
+        this.stockID = stockID;
+    }
+
  
     @Id
     @GeneratedValue
@@ -29,6 +41,7 @@ public class UploadFile implements Serializable{
     public long getId() {
         return id;
     }
+
  
     public void setId(long id) {
         this.id = id;
